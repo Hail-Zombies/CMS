@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>我的 ASP.NET 应用程序</title>
+    <!-- <script src="Scripts/jquery-3.4.1.js"></script>
+    <script src="Scripts/popper.js"></script>
+    <link href="Content/bootstrap.css" rel="stylesheet" type="text/css">
+    <script src="Scripts/bootstrap.js"></script>
+    <script src="Scripts/modernizr-2.8.3.js"></script> -->
+    <link href="zui/css/zui.css" rel="stylesheet" />
+    <link href="Content/Site.css" rel="stylesheet" type="text/css" />
+
+    <script src="Scripts/jquery-3.6.0.min.js"></script>
+    <script src="zui/js/zui.min.js"></script>
+    <script src="zui/lib/chart/zui.chart.min.js"></script>
+</head>
+
+<body>
+    <!-- 顶部导航栏 -->
+    <nav class="navbar navbar-inverse" role="navigation"
+        style="margin-bottom: 0;background-color: black;border-radius: 0;border: 0;">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">标识</a>
+            </div>
+            <div>
+                <ul class="nav navbar-nav nav-top">
+                    <li class="active"><a href="#">首页</a></li>
+                    <li><a href="#">SVN</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Java <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">jmeter</a></li>
+                            <li><a href="#">EJB</a></li>
+                            <li><a href="#">Jasper Report</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">分离的链接</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">另一个分离的链接</a></li>
+                        </ul>
+                    </li>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#"><span class="glyphicon glyphicon-user"></span> 注册</a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> 登录</a></li>
+                    </ul>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- 顶部导航栏结束 -->
+
+    <div class="container-fluid">
+        <!-- 母版头 -->
+        <div class="row">
+            <div class="col-xs-2"></div>
+            <div class="col-xs-8">
+                <div class="container-fluid" style="margin-top: 0px; margin-bottom: 0px; ">
+                    <img src="image/148bf7ddd88766bafe822cbc79e132ec.jpeg" alt=" 图片丢失"
+                        style=" width: 100%;height: auto;" />
+                    <!-- <div style="margin-top: 2px; margin-bottom: 0px;height:40px;"> </div> -->
+
+                    <ul class="nav nav-top nav-simple nav-justified" style="border: 0;background-color:azure">
+                        <li class="active">
+                            <a href="###">部门一 </a>
+                        </li>
+                        <li>
+                            <a href="###">部门二 </a>
+                        </li>
+                        <li>
+                            <a href="###">部门三 </a>
+                        </li>
+                        <li>
+                            <a href="###">部门四 </a>
+                        </li>
+                        <li>
+                            <a href="###">部门五 </a>
+                        </li>
+                        <li>
+                            <a href="###">部门六 </a>
+                        </li>
+                        <li class="">
+                            <a href="###">动态
+                                <!-- <span class="label label-badge label-success pull-right">4</span> -->
+                            </a>
+                        </li>
+                        <li class="dropdown  dropdown-hover">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="###">更多</a>
+                            <ul class="dropdown-menu">
+                                <li class="dropdown-header">下拉菜单标题</li>
+                                <li>
+                                    <a href="">任务</a>
+                                </li>
+                                <li>
+                                    <a href="">Bug</a>
+                                </li>
+                                <li class="divider"></li>
+                                <li class="dropdown-header">下拉菜单标题</li>
+                                <li>
+                                    <a href="">需求</a>
+                                </li>
+                                <li>
+                                    <a href="">用例</a>
+                                </li>
+                                <li class="dropdown-submenu">
+                                    <a href="###">在左侧显示</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="###">复制</a></li>
+                                        <li><a href="###">粘贴</a></li>
+                                        <li><a href="###">剪切</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <div style="margin-top: 2px;"></div>
+
+                    <div class="row weather">
+                        <div class="col-xs-1" style="padding-right: 0; text-align: center;">
+                            <a href="#" style="white-space: nowrap;">天气：</a>
+                        </div>
+                        <div class="col-xs-11">
+                            <marquee onMouseOut="this.start()" onMouseOver="this.stop()">
+                                北京
+                                今天：小雨
+
+                                17°~24°C
+                                无持续风向&lt;3级
+                            </marquee>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-1">
+                <div class="container">
+                    <div class="btn-group-vertical toolbar">
+                        <button type="button" class="btn btn-lg">按钮 1</button>
+                        <button type="button" class="btn btn-lg">按钮 2</button>
+                        <div class="btn-group-vertical dropdown dropdown-hover">
+                            <button type="button" class="btn btn-lg dropdown-toggle" data-toggle="dropdown">
+                                下拉
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">下拉链接 1</a></li>
+                                <li><a href="#">下拉链接 2</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="toolbar-icon">
+                        <ul style="list-style-type: none;">
+                            <li> <a href="#"><i class="icon icon-edit icon-5x"
+                                        style="color: rgba(9, 61, 75);opacity: 0.5;"></i></a> </li>
+                            <li> <a href="#"><i class="icon icon-chevron-sign-left icon-5x"
+                                        style="color: rgba(9, 61, 75);opacity: 0.5;"></i></a></li>
+                            <li> <a href="#"><i class="icon icon-chevron-sign-up icon-5x"
+                                        style="color: rgba(9, 61, 75);opacity: 0.5;"></i></a></li>
+                        </ul>
+                    </div>
+
+                    <!-- <table class="table toolbar">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <a href="editor.html" style=" border: 1px solid #75a56d">发布文章</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="#" style=" border: 1px solid #75a56d">功能二</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="#" style=" border: 1px solid #75a56d">功能三</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="#" style=" border: 1px solid #75a56d">功能四</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="#" style=" border: 1px solid #75a56d">功能五</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="#" style=" border: 1px solid #75a56d">功能六</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="#" style=" border: 1px solid #75a56d">功能七</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table> -->
+                </div>
+            </div>
+            <div class="col-xs-1">
+                <div class="container">
+                </div>
+            </div>
+        </div>
+        <!-- 母版头结束 -->
+
+        <div class="row">
+            <div class="col-xs-2"></div>
+            <div class="col-xs-8">
+                <!-- 内容 -->
+                <div class="container-fluid" style="margin-top: 1px; margin-bottom: 0px; ">
+
+                    <!-- 重要内容 -->
+                    <div class="row">
+                        <div class="col-xs-8">
+                            <div id="carousel_news" class="carousel slide carousel-news" data-ride="carousel">
+                                <ol class="carousel-indicators">
+                                    <li data-target="#carousel_news" data-slide-to="0" class="active"></li>
+                                    <li data-target="#carousel_news" data-slide-to="1"></li>
+                                </ol>
+                                <div class="carousel-inner">
+                                    <div class="item active">
+                                        <img src="image/6e920e010dfcbecfb625baa3690d75ba.jpeg" alt="...">
+                                        <div class="carousel-caption"></div>
+                                        <a href="#">文章内容</a>
+                                    </div>
+                                    <div class="item">
+                                        <img src="image/400a6e57f796.jpeg" alt="...">
+                                        <div class="carousel-caption"></div>
+                                        <a href="#">杨洁篪会见美国民主、共和两党代表</a>
+                                    </div>
+                                </div>
+                                <!-- 轮播（Carousel）导航 -->
+                                <a class="left carousel-control" href="#carousel_news" role="button" data-slide="prev">
+                                    <span class="icon icon-chevron-left" aria-hidden="true"></span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="right carousel-control" href="#carousel_news" role="button" data-slide="next">
+                                    <span class="icon icon-chevron-right" aria-hidden="true"></span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xs-4">
+                            <div class="container">
+                                <div class="department" style="margin-bottom: 1rem;">
+                                    <div class="detitle">
+                                        <span>要讯</span>
+                                        <a class="more" href="#">更多 +</a>
+                                    </div>
+                                    <div class="container news">
+                                        <ul>
+                                            <li>
+                                                <a href="#">
+                                                    中国多个大学校长寄语：做“先锋”不做“看客” 成“梦想派”更成“行动派”
+                                                </a>
+                                                <p>[09-14]</p>
+                                            </li>
+                                            <li>
+                                                <a href="#">国务院安委会对两起重大道路交通事故查处挂牌督办</a>
+                                                <p>[09-14]</p>
+                                            </li>
+                                            <li>
+                                                <a href="#">最高检：公益诉讼全面开展4年提起诉讼近2万件</a>
+                                                <p>[09-14]</p>
+                                            </li>
+                                            <li>
+                                                <a href="#">5年收案逾2000万件 中国发文夯实法庭之“基”</a>
+                                                <p>[09-14]</p>
+                                            </li>
+                                            <li>
+                                                <a href="#">中国代表一组国家在联合国人权理事会指出美国严重人权问题</a>
+                                                <p>[09-14]</p>
+                                            </li>
+                                            <li>
+                                                <a href="#">教育部：从严从紧做好中秋国庆假期和秋季学期疫情防控工作</a>
+                                                <p>[09-14]</p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="department">
+                                    <div class="detitle">
+                                        <span>热点</span>
+                                        <a class="more" href="#">更多 +</a>
+                                    </div>
+                                    <div class="container news">
+                                        <ul>
+                                            <li>
+                                                <a href="#">
+                                                    中国多个大学校长寄语：做“先锋”不做“看客” 成“梦想派”更成“行动派”
+                                                </a>
+                                                <p>[09-14]</p>
+                                            </li>
+                                            <li>
+                                                <a href="#">国务院安委会对两起重大道路交通事故查处挂牌督办</a>
+                                                <p>[09-14]</p>
+                                            </li>
+                                            <li>
+                                                <a href="#">最高检：公益诉讼全面开展4年提起诉讼近2万件</a>
+                                                <p>[09-14]</p>
+                                            </li>
+                                            <li>
+                                                <a href="#">5年收案逾2000万件 中国发文夯实法庭之“基”</a>
+                                                <p>[09-14]</p>
+                                            </li>
+                                            <li>
+                                                <a href="#">中国代表一组国家在联合国人权理事会指出美国严重人权问题</a>
+                                                <p>[09-14]</p>
+                                            </li>
+                                            <li>
+                                                <a href="#">教育部：从严从紧做好中秋国庆假期和秋季学期疫情防控工作</a>
+                                                <p>[09-14]</p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 重要内容结束 -->
+
+                    <!-- 基层动态 轮播 -->
+                    <div class="row" style="padding: 0 10px;margin-top: 20px;">
+                        <div class="container-fluid" style="background-color: antiquewhite;padding-bottom: 0px;">
+                            <div class="row container-fluid">
+                                <h1 style="display: block;border-bottom: 2px solid rgba(201, 21, 21, 0.589);">基层动态</h1>
+                            </div>
+                            <div class="container-fluid">
+                                <ul id="nav_tabs" class="nav nav-secondary nav-justified">
+                                    <li class="slide-1 active"><a>单位一</a></li>
+                                    <li class="slide-2"><a>单位二</a></li>
+                                    <li class="slide-3"><a>单位三</a></li>
+                                </ul>
+
+                                <div id="carousel_tabs" class="carousel slide carousel-tabs" data-ride="carousel"
+                                    data-pause="true">
+                                    <!-- <div class="carousel  carousel-tabs"> -->
+                                    <!-- 轮播项目 -->
+                                    <div class="carousel-inner">
+                                        <!-- 第一个单位 -->
+                                        <div class="item active">
+                                            <div class="container-fluid">
+                                                <div class="col-xs-6">
+                                                    <div class="row">
+                                                        <div class="col-xs-6">
+                                                            <div class="ratio-img">
+                                                                <a href="#"><img src="image/400a6e57f796.jpeg"></a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xs-6">
+                                                            <div class="ratio-img">
+                                                                <a href="#"><img
+                                                                        src="image/6e920e010dfcbecfb625baa3690d75ba.jpeg"></a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row">
+                                                        <div class="col-xs-6">
+                                                            <div class="ratio-img">
+                                                                <a href="#"><img src="image/400a6e57f796.jpeg"></a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xs-6">
+                                                            <div class="ratio-img">
+                                                                <a href="#"><img
+                                                                        src="image/6e920e010dfcbecfb625baa3690d75ba.jpeg"></a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-xs-6">
+                                                    <div class="ratio-img">
+                                                        <div class="department">
+                                                            <div class="detitle">
+                                                                <span>单位一</span>
+                                                                <a class="more" href="#">更多 +</a>
+                                                            </div>
+                                                            <div class="container news">
+                                                                <ul>
+                                                                    <li>
+                                                                        <a href="#"
+                                                                            style="font-size: 30px;color: red;max-width: 100%;">
+                                                                            做“先锋”不做“看客”成“梦想派”更成“行动派”</a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a href="#">国务院安委会对两起重大道路交通事故查处挂牌督办</a>
+                                                                        <p>[09-14]</p>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a href="#">最高检：公益诉讼全面开展4年提起诉讼近2万件</a>
+                                                                        <p>[09-14]</p>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a href="#">5年收案逾2000万件 中国发文夯实法庭之“基”</a>
+                                                                        <p>[09-14]</p>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a href="#"
+                                                                            style="font-size: 30px;color: red;max-width: 100%;">
+                                                                            中国多个大学校长寄语 </a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a href="#"> 中国多个大学校长寄语：做“先锋”不做“看客”
+                                                                            成“梦想派”更成“行动派”</a>
+                                                                        <p>[09-14]</p>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a href="#">国务院安委会对两起重大道路交通事故查处挂牌督办</a>
+                                                                        <p>[09-14]</p>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a href="#">最高检：公益诉讼全面开展4年提起诉讼近2万件</a>
+                                                                        <p>[09-14]</p>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- 第一个单位结束 -->
+
+                                        <div class="item">
+                                            <div class="container-fluid">
+
+                                                <div class="col-xs-6">
+                                                    <div class="row">
+                                                        <div class="col-xs-6">
+                                                            <div class="ratio-img">
+                                                                <a href="#"><img src="image/400a6e57f796.jpeg"></a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xs-6">
+                                                            <div class="ratio-img">
+                                                                <a href="#"><img
+                                                                        src="image/6e920e010dfcbecfb625baa3690d75ba.jpeg"></a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row">
+                                                        <div class="col-xs-6">
+                                                            <div class="ratio-img">
+                                                                <a href="#"><img src="image/400a6e57f796.jpeg"></a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xs-6">
+                                                            <div class="ratio-img">
+                                                                <a href="#"><img
+                                                                        src="image/6e920e010dfcbecfb625baa3690d75ba.jpeg"></a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-xs-6">
+                                                    <div class="ratio-img">
+                                                        <div class="department">
+                                                            <div class="detitle">
+                                                                <span>单位二</span>
+                                                                <a class="more" href="#">更多 +</a>
+                                                            </div>
+                                                            <div class="container news">
+                                                                <ul>
+                                                                    <li>
+                                                                        <a href="#"
+                                                                            style="font-size: 30px;color: red;max-width: 100%;">
+                                                                            做“先锋”不做“看客”成“梦想派”更成“行动派”</a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a href="#">国务院安委会对两起重大道路交通事故查处挂牌督办</a>
+                                                                        <p>[09-14]</p>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a href="#">最高检：公益诉讼全面开展4年提起诉讼近2万件</a>
+                                                                        <p>[09-14]</p>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a href="#">5年收案逾2000万件 中国发文夯实法庭之“基”</a>
+                                                                        <p>[09-14]</p>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a href="#"
+                                                                            style="font-size: 30px;color: red;max-width: 100%;">
+                                                                            中国多个大学校长寄语 </a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a href="#"> 中国多个大学校长寄语：做“先锋”不做“看客”
+                                                                            成“梦想派”更成“行动派”</a>
+                                                                        <p>[09-14]</p>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a href="#">国务院安委会对两起重大道路交通事故查处挂牌督办</a>
+                                                                        <p>[09-14]</p>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a href="#">最高检：公益诉讼全面开展4年提起诉讼近2万件</a>
+                                                                        <p>[09-14]</p>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="item">
+                                            <div class="container-fluid">
+
+                                                <div class="col-xs-6">
+                                                    <div class="row">
+                                                        <div class="col-xs-6">
+                                                            <div class="ratio-img">
+                                                                <a href="#"><img src="image/400a6e57f796.jpeg"></a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xs-6">
+                                                            <div class="ratio-img">
+                                                                <a href="#"><img
+                                                                        src="image/6e920e010dfcbecfb625baa3690d75ba.jpeg"></a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row">
+                                                        <div class="col-xs-6">
+                                                            <div class="ratio-img">
+                                                                <a href="#"><img src="image/400a6e57f796.jpeg"></a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xs-6">
+                                                            <div class="ratio-img">
+                                                                <a href="#"><img
+                                                                        src="image/6e920e010dfcbecfb625baa3690d75ba.jpeg"></a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-xs-6">
+                                                    <div class="ratio-img">
+                                                        <div class="department">
+                                                            <div class="detitle">
+                                                                <span>单位三</span>
+                                                                <a class="more" href="#">更多 +</a>
+                                                            </div>
+                                                            <div class="container news">
+                                                                <ul>
+                                                                    <li>
+                                                                        <a href="#"
+                                                                            style="font-size: 30px;color: red;max-width: 100%;">
+                                                                            做“先锋”不做“看客”成“梦想派”更成“行动派”</a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a href="#">国务院安委会对两起重大道路交通事故查处挂牌督办</a>
+                                                                        <p>[09-14]</p>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a href="#">最高检：公益诉讼全面开展4年提起诉讼近2万件</a>
+                                                                        <p>[09-14]</p>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a href="#">5年收案逾2000万件 中国发文夯实法庭之“基”</a>
+                                                                        <p>[09-14]</p>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a href="#"
+                                                                            style="font-size: 30px;color: red;max-width: 100%;">
+                                                                            中国多个大学校长寄语 </a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a href="#"> 中国多个大学校长寄语：做“先锋”不做“看客”
+                                                                            成“梦想派”更成“行动派”</a>
+                                                                        <p>[09-14]</p>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a href="#">国务院安委会对两起重大道路交通事故查处挂牌督办</a>
+                                                                        <p>[09-14]</p>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a href="#">最高检：公益诉讼全面开展4年提起诉讼近2万件</a>
+                                                                        <p>[09-14]</p>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="container-fluid">
+                                <div class="col-xs-6">
+                                    <div class="container-fluid">
+                                        <div class="department ratio">
+                                            <div class="detitle">
+                                                <span>机关动态</span>
+                                                <a class="more" href="#">更多 +</a>
+                                            </div>
+                                            <div class="container news">
+                                                <ul>
+                                                    <li>
+                                                        <a href="#">
+                                                            中国多个大学校长寄语：做“先锋”不做“看客” 成“梦想派”更成“行动派”
+                                                        </a>
+                                                        <p>[09-14]</p>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">国务院安委会对两起重大道路交通事故查处挂牌督办</a>
+                                                        <p>[09-14]</p>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">最高检：公益诉讼全面开展4年提起诉讼近2万件</a>
+                                                        <p>[09-14]</p>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">5年收案逾2000万件 中国发文夯实法庭之“基”</a>
+                                                        <p>[09-14]</p>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">中国代表一组国家在联合国人权理事会指出美国严重人权问题</a>
+                                                        <p>[09-14]</p>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">教育部：从严从紧做好中秋国庆假期和秋季学期疫情防控工作</a>
+                                                        <p>[09-14]</p>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            中国多个大学校长寄语：做“先锋”不做“看客” 成“梦想派”更成“行动派”
+                                                        </a>
+                                                        <p>[09-14]</p>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">国务院安委会对两起重大道路交通事故查处挂牌督办</a>
+                                                        <p>[09-14]</p>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">最高检：公益诉讼全面开展4年提起诉讼近2万件</a>
+                                                        <p>[09-14]</p>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-6">
+                                    <div class="container-fluid">
+                                        <div class="department">
+                                            <div class="detitle">
+                                                <span>稿件统计</span>
+                                            </div>
+                                            <div class="chart-canvas ratio"><canvas id="myBarChart"></canvas></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 基层动态 轮播 结束  -->
+
+                    <!-- 各栏目 -->
+                    <div class="row" style="padding: 0 10px;">
+                        <div class="container-fluid">
+                            <div class="row" style="margin-top: 2rem; margin-bottom: 0px; ">
+                                <div class="col-xs-4">
+                                    <div class="department">
+                                        <div class="detitle">
+                                            <span>部门一</span>
+                                            <a class="more" href="#">更多 +</a>
+                                        </div>
+                                        <div class="container news">
+                                            <ul>
+                                                <li>
+                                                    <a href="#">
+                                                        中国多个大学校长寄语：做“先锋”不做“看客” 成“梦想派”更成“行动派”
+                                                    </a>
+                                                    <p>[09-14]</p>
+                                                </li>
+                                                <li>
+                                                    <a href="#">国务院安委会对两起重大道路交通事故查处挂牌督办</a>
+                                                    <p>[09-14]</p>
+                                                </li>
+                                                <li>
+                                                    <a href="#">最高检：公益诉讼全面开展4年提起诉讼近2万件</a>
+                                                    <p>[09-14]</p>
+                                                </li>
+                                                <li>
+                                                    <a href="#">5年收案逾2000万件 中国发文夯实法庭之“基”</a>
+                                                    <p>[09-14]</p>
+                                                </li>
+                                                <li>
+                                                    <a href="#">中国代表一组国家在联合国人权理事会指出美国严重人权问题</a>
+                                                    <p>[09-14]</p>
+                                                </li>
+                                                <li>
+                                                    <a href="#">教育部：从严从紧做好中秋国庆假期和秋季学期疫情防控工作</a>
+                                                    <p>[09-14]</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-4">
+                                    <div class="department">
+                                        <div class="detitle">
+                                            <span>部门二</span>
+                                            <a class="more" href="#">更多 +</a>
+                                        </div>
+                                        <div class="container news">
+                                            <ul>
+                                                <li>
+                                                    <a href="#">
+                                                        中国多个大学校长寄语：做“先锋”不做“看客” 成“梦想派”更成“行动派”
+                                                    </a>
+                                                    <p>[09-14]</p>
+                                                </li>
+                                                <li>
+                                                    <a href="#">国务院安委会对两起重大道路交通事故查处挂牌督办</a>
+                                                    <p>[09-14]</p>
+                                                </li>
+                                                <li>
+                                                    <a href="#">最高检：公益诉讼全面开展4年提起诉讼近2万件</a>
+                                                    <p>[09-14]</p>
+                                                </li>
+                                                <li>
+                                                    <a href="#">5年收案逾2000万件 中国发文夯实法庭之“基”</a>
+                                                    <p>[09-14]</p>
+                                                </li>
+                                                <li>
+                                                    <a href="#">中国代表一组国家在联合国人权理事会指出美国严重人权问题</a>
+                                                    <p>[09-14]</p>
+                                                </li>
+                                                <li>
+                                                    <a href="#">教育部：从严从紧做好中秋国庆假期和秋季学期疫情防控工作</a>
+                                                    <p>[09-14]</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-4">
+                                    <div class="department">
+                                        <div class="detitle">
+                                            <span>部门三</span>
+                                            <a class="more" href="#">更多 +</a>
+                                        </div>
+                                        <div class="container news">
+                                            <ul>
+                                                <li>
+                                                    <a href="#">
+                                                        中国多个大学校长寄语：做“先锋”不做“看客” 成“梦想派”更成“行动派”
+                                                    </a>
+                                                    <p>[09-14]</p>
+                                                </li>
+                                                <li>
+                                                    <a href="#">国务院安委会对两起重大道路交通事故查处挂牌督办</a>
+                                                    <p>[09-14]</p>
+                                                </li>
+                                                <li>
+                                                    <a href="#">最高检：公益诉讼全面开展4年提起诉讼近2万件</a>
+                                                    <p>[09-14]</p>
+                                                </li>
+                                                <li>
+                                                    <a href="#">5年收案逾2000万件 中国发文夯实法庭之“基”</a>
+                                                    <p>[09-14]</p>
+                                                </li>
+                                                <li>
+                                                    <a href="#">中国代表一组国家在联合国人权理事会指出美国严重人权问题</a>
+                                                    <p>[09-14]</p>
+                                                </li>
+                                                <li>
+                                                    <a href="#">教育部：从严从紧做好中秋国庆假期和秋季学期疫情防控工作</a>
+                                                    <p>[09-14]</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row" style="margin-top: 2rem; margin-bottom: 0px; ">
+                                <div class="col-xs-4">
+                                    <div class="department">
+                                        <div class="detitle">
+                                            <span>部门一</span>
+                                            <a class="more" href="#">更多 +</a>
+                                        </div>
+                                        <div class="container news">
+                                            <ul>
+                                                <li>
+                                                    <a href="#">
+                                                        中国多个大学校长寄语：做“先锋”不做“看客” 成“梦想派”更成“行动派”
+                                                    </a>
+                                                    <p>[09-14]</p>
+                                                </li>
+                                                <li>
+                                                    <a href="#">国务院安委会对两起重大道路交通事故查处挂牌督办</a>
+                                                    <p>[09-14]</p>
+                                                </li>
+                                                <li>
+                                                    <a href="#">最高检：公益诉讼全面开展4年提起诉讼近2万件</a>
+                                                    <p>[09-14]</p>
+                                                </li>
+                                                <li>
+                                                    <a href="#">5年收案逾2000万件 中国发文夯实法庭之“基”</a>
+                                                    <p>[09-14]</p>
+                                                </li>
+                                                <li>
+                                                    <a href="#">中国代表一组国家在联合国人权理事会指出美国严重人权问题</a>
+                                                    <p>[09-14]</p>
+                                                </li>
+                                                <li>
+                                                    <a href="#">教育部：从严从紧做好中秋国庆假期和秋季学期疫情防控工作</a>
+                                                    <p>[09-14]</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-4">
+                                    <div class="department">
+                                        <div class="detitle">
+                                            <span>部门二</span>
+                                            <a class="more" href="#">更多 +</a>
+                                        </div>
+                                        <div class="container news">
+                                            <ul>
+                                                <li>
+                                                    <a href="#">
+                                                        中国多个大学校长寄语：做“先锋”不做“看客” 成“梦想派”更成“行动派”
+                                                    </a>
+                                                    <p>[09-14]</p>
+                                                </li>
+                                                <li>
+                                                    <a href="#">国务院安委会对两起重大道路交通事故查处挂牌督办</a>
+                                                    <p>[09-14]</p>
+                                                </li>
+                                                <li>
+                                                    <a href="#">最高检：公益诉讼全面开展4年提起诉讼近2万件</a>
+                                                    <p>[09-14]</p>
+                                                </li>
+                                                <li>
+                                                    <a href="#">5年收案逾2000万件 中国发文夯实法庭之“基”</a>
+                                                    <p>[09-14]</p>
+                                                </li>
+                                                <li>
+                                                    <a href="#">中国代表一组国家在联合国人权理事会指出美国严重人权问题</a>
+                                                    <p>[09-14]</p>
+                                                </li>
+                                                <li>
+                                                    <a href="#">教育部：从严从紧做好中秋国庆假期和秋季学期疫情防控工作</a>
+                                                    <p>[09-14]</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-4">
+                                    <div class="department">
+                                        <div class="detitle">
+                                            <span>部门三</span>
+                                            <a class="more" href="#">更多 +</a>
+                                        </div>
+                                        <div class="container news">
+                                            <ul>
+                                                <li>
+                                                    <a href="#">
+                                                        中国多个大学校长寄语：做“先锋”不做“看客” 成“梦想派”更成“行动派”
+                                                    </a>
+                                                    <p>[09-14]</p>
+                                                </li>
+                                                <li>
+                                                    <a href="#">国务院安委会对两起重大道路交通事故查处挂牌督办</a>
+                                                    <p>[09-14]</p>
+                                                </li>
+                                                <li>
+                                                    <a href="#">最高检：公益诉讼全面开展4年提起诉讼近2万件</a>
+                                                    <p>[09-14]</p>
+                                                </li>
+                                                <li>
+                                                    <a href="#">5年收案逾2000万件 中国发文夯实法庭之“基”</a>
+                                                    <p>[09-14]</p>
+                                                </li>
+                                                <li>
+                                                    <a href="#">中国代表一组国家在联合国人权理事会指出美国严重人权问题</a>
+                                                    <p>[09-14]</p>
+                                                </li>
+                                                <li>
+                                                    <a href="#">教育部：从严从紧做好中秋国庆假期和秋季学期疫情防控工作</a>
+                                                    <p>[09-14]</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row" style="margin-top: 2rem; margin-bottom: 0px; ">
+                                <div class="col-xs-4">
+                                    <div class="department">
+                                        <div class="detitle">
+                                            <span>部门一</span>
+                                            <a class="more" href="#">更多 +</a>
+                                        </div>
+                                        <div class="container news">
+                                            <ul>
+                                                <li>
+                                                    <a href="#">
+                                                        中国多个大学校长寄语：做“先锋”不做“看客” 成“梦想派”更成“行动派”
+                                                    </a>
+                                                    <p>[09-14]</p>
+                                                </li>
+                                                <li>
+                                                    <a href="#">国务院安委会对两起重大道路交通事故查处挂牌督办</a>
+                                                    <p>[09-14]</p>
+                                                </li>
+                                                <li>
+                                                    <a href="#">最高检：公益诉讼全面开展4年提起诉讼近2万件</a>
+                                                    <p>[09-14]</p>
+                                                </li>
+                                                <li>
+                                                    <a href="#">5年收案逾2000万件 中国发文夯实法庭之“基”</a>
+                                                    <p>[09-14]</p>
+                                                </li>
+                                                <li>
+                                                    <a href="#">中国代表一组国家在联合国人权理事会指出美国严重人权问题</a>
+                                                    <p>[09-14]</p>
+                                                </li>
+                                                <li>
+                                                    <a href="#">教育部：从严从紧做好中秋国庆假期和秋季学期疫情防控工作</a>
+                                                    <p>[09-14]</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-4">
+                                    <div class="department">
+                                        <div class="detitle">
+                                            <span>部门二</span>
+                                            <a class="more" href="#">更多 +</a>
+                                        </div>
+                                        <div class="container news">
+                                            <ul>
+                                                <li>
+                                                    <a href="#">
+                                                        中国多个大学校长寄语：做“先锋”不做“看客” 成“梦想派”更成“行动派”
+                                                    </a>
+                                                    <p>[09-14]</p>
+                                                </li>
+                                                <li>
+                                                    <a href="#">国务院安委会对两起重大道路交通事故查处挂牌督办</a>
+                                                    <p>[09-14]</p>
+                                                </li>
+                                                <li>
+                                                    <a href="#">最高检：公益诉讼全面开展4年提起诉讼近2万件</a>
+                                                    <p>[09-14]</p>
+                                                </li>
+                                                <li>
+                                                    <a href="#">5年收案逾2000万件 中国发文夯实法庭之“基”</a>
+                                                    <p>[09-14]</p>
+                                                </li>
+                                                <li>
+                                                    <a href="#">中国代表一组国家在联合国人权理事会指出美国严重人权问题</a>
+                                                    <p>[09-14]</p>
+                                                </li>
+                                                <li>
+                                                    <a href="#">教育部：从严从紧做好中秋国庆假期和秋季学期疫情防控工作</a>
+                                                    <p>[09-14]</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 各栏目结束 -->
+
+                </div>
+                <!-- 内容结束 -->
+                <div class="container-fluid" style="margin-top: 1px; margin-bottom: 0px; ">
+                    <footer>
+                        <HR align=center width=100% color=#987cb9 SIZE=2>
+                        <ul class="nav nav-pills nav-justified" style="padding: 0 10%;">
+                            <li><a href="#">友情链接</a>&nbsp;&nbsp;&nbsp;&nbsp;</li>
+                            <li><a href="#">友情链接</a>&nbsp;&nbsp;&nbsp;&nbsp;</li>
+                            <li><a href="#">友情链接</a>&nbsp;&nbsp;&nbsp;&nbsp;</li>
+                            <li><a href="#">友情链接</a>&nbsp;&nbsp;&nbsp;&nbsp;</li>
+                            <li><a href="#">友情链接</a>&nbsp;&nbsp;&nbsp;&nbsp;</li>
+                        </ul>
+                    </footer>
+                </div>
+            </div>
+            <div class="col-xs-2">
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+
+        var data = {
+            labels: ["一月", "二月", "三月", "四月", "五月", "六月", "七月"],
+            datasets: [
+                {
+                    label: "蓝队",
+                    color: 'blue',
+                    data: [65, 59, 80, 81, 56, 55, 40]
+                }, {
+                    label: "绿队",
+                    color: 'green',
+                    data: [28, 48, 40, 19, 86, 27, 90]
+                }
+            ]
+        };
+
+        var options = { responsive: true }; // 图表配置项，可以留空来使用默认的配置
+        var myBarChart = $('#myBarChart').barChart(data, options);
+
+        var id = 1;
+        $(function () {
+            $("#carousel_tabs").carousel('pause');
+            $("#nav_tabs>li").hover(
+                function () {
+                    $(".slide-" + String(id)).removeClass("active");
+                    id = Number($(this).attr("class").split("-")[1]);
+                    //console.log(id);
+                    $("#carousel_tabs").carousel(id - 1);
+                    $(this).addClass("active");
+                    $("#carousel_tabs").carousel('pause');
+                },
+                function () {
+                    $("#carousel_tabs").carousel('cycle');
+                }
+            );
+            // 获取轮播索引
+            $('#carousel_tabs').on('slide.zui.carousel', function (event) {
+                var $hoder = $('#carousel_tabs').find('.item'),
+                    $items = $(event.relatedTarget);
+                //getIndex就是轮播到当前位置的索引
+                var getIndex = $hoder.index($items);
+                $(".slide-" + String(id)).removeClass("active");
+                id = getIndex + 1;
+                $(".slide-" + String(id)).addClass("active");
+            }
+            );
+        });
+    </script>
+</body>
+
+</html>

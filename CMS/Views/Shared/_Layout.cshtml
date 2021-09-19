@@ -1,0 +1,135 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @*@Scripts.Render("~/bundles/modernizr")*@
+    <style type="text/css">
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-xl-2 d-xl-block d-none"></div>
+            <div class="col-xl-8 col-sm-12" style="padding: 0 0;">
+                <div class="container-fluid" style="margin-top: 1px; margin-bottom: 0px; ">
+                    <img src="~/image/148bf7ddd88766bafe822cbc79e132ec.jpeg" alt=" 图片丢失"
+                         style=" width: 100%;height: auto;" />
+                    <!-- <div style="margin-top: 2px; margin-bottom: 0px;height:40px;"> </div> -->
+
+                    <div style="margin-top: 2px;"></div>
+                    <nav class="navbar navbar-expand-lg navbar-light bg-light"
+                         style=" background-color: #87c2ff !important;">
+                        <a class="navbar-brand active" style="font-size: 1.5rem;font-weight: bolder;"
+                           href="/">首页</a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <!-- Navbar content -->
+                            <ul class="navbar-nav">
+                                <li class="nav-item"><a class="nav-link" href="#" title="部门一">部门一</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#" title="部门二">部门二</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#" title="部门三">部门三</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#" title="部门四">部门四</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#" title="部门五">部门五</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#" title="部门六">部门六</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#" title="部门七">部门七</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#" title="部门八">部门八</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+
+                    <div style="margin-top: 2px;"></div>
+
+                    <div class="row weather">
+                        <div class="col-lg-1 d-lg-block d-none" style="padding-right: 0; text-align: center;">
+                            <a href="#" style="white-space: nowrap;">天气：</a>
+                        </div>
+                        <div class="col-lg-11  col-sm-12">
+                            <marquee onMouseOut="this.start()" onMouseOver="this.stop()">
+                                北京
+                                今天：小雨
+
+                                17°~24°C
+                                无持续风向&lt;3级
+                            </marquee>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-2 d-xl-block d-none">
+                <div class="container">
+                    <table class="table func-button">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <a href="/Editor" style=" border: 1px solid #75a56d">发布文章</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="#" style=" border: 1px solid #75a56d">功能二</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="#" style=" border: 1px solid #75a56d">功能三</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="#" style=" border: 1px solid #75a56d">功能四</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="#" style=" border: 1px solid #75a56d">功能五</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="#" style=" border: 1px solid #75a56d">功能六</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="#" style=" border: 1px solid #75a56d">功能七</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            @RenderBody()
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-xl-8 col-sm-12" style="padding: 0 0;">
+                <footer>
+                    <div class="container-fluid" style="margin-top: 1px; margin-bottom: 0px; ">
+                        <HR align=center width=100% color=#987cb9 SIZE=2>
+                        <ul class="nav" style="padding-left: 40px;">
+                            <li><a href="#">友情链接</a>&nbsp;&nbsp;&nbsp;&nbsp;</li>
+                            <li><a href="#">友情链接</a>&nbsp;&nbsp;&nbsp;&nbsp;</li>
+                            <li><a href="#">友情链接</a>&nbsp;&nbsp;&nbsp;&nbsp;</li>
+                            <li><a href="#">友情链接</a>&nbsp;&nbsp;&nbsp;&nbsp;</li>
+                            <li><a href="#">友情链接</a>&nbsp;&nbsp;&nbsp;&nbsp;</li>
+                        </ul>
+                        <p>&copy; @DateTime.Now.Year - 我的 ASP.NET 应用程序</p>
+                    </div>
+                </footer>
+            </div>
+        </div>
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/zui")
+        @RenderSection("scripts", required: false)
+    </div>
+</body>
+</html>

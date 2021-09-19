@@ -1,0 +1,138 @@
+﻿:root {
+    --width: 1170px;
+    --nav_height: 40px;
+}
+* {
+    margin:0;
+    padding:0;
+    }
+html {
+    /* background-image: url('../image/6e920e010dfcbecfb625baa3690d75ba.jpeg'); */
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: bottom;
+    background-position-x: center;
+}
+
+body {
+    display: block;
+    width: var(--width);
+    text-align: left;
+    margin: 0 auto;
+    background: #fff;
+    padding-top: 0px;
+    padding-bottom: 20px;
+    background: rgba(0, 0, 0, 0);
+}
+
+.title {
+    border: 2px;
+    background-color: red;
+    height: 30px;
+}
+.title .name {
+    text-align: left;
+    color: white;
+    font-size: 14px;
+}
+.table-layout-top {
+    display: table;
+    border-collapse: separate;
+    border-spacing: 20px;
+    background-color: aqua;
+    width: 100%;
+    height: 400px;
+}
+
+    .table-layout-top > div {
+        display: table-cell;
+        border: 2pt solid grey;
+    }
+
+.table-layout-content {
+    display: table;
+    border-collapse: separate;
+    border-spacing: 20px;
+    background-color: aqua;
+    width: 100%;
+    height: 340px;
+    display: table;
+}
+
+    .table-layout-content > div {
+        display: table-cell;
+        border: 2pt solid #808080;
+    }
+
+    .table-layout-content .cell {
+        width: 33.33%;
+        background-color: cornsilk;
+    }
+
+a {
+    text-decoration: none;
+}
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+nav {
+	text-align: center;
+    width: var(--width);
+    height: var(--nav_height);
+    /* background-image: url('../image/src=http___cdn.cocimg.com_bbs_attachment_Fid_21_21_379722_3aab2accb56f636.png&refer=http___cdn.cocimg.jpg'); */
+    padding: 0;
+}
+
+    nav ul {
+		display: inline-block;
+        margin: 0px;
+        padding: 0 0 0 0;
+        width: var(--width);
+        list-style: none;
+    }
+
+        nav ul li {
+            cursor: pointer;
+            float: left;
+            text-align: center;
+            line-height: var(--nav_height);
+            font-weight: bold;
+            color: #fff;
+            /* background: url('../image/src=http___cdn.cocimg.com_bbs_attachment_Fid_21_21_379722_3aab2accb56f636.png&refer=http___cdn.cocimg.jpg') left top repeat-x; */
+        }
+
+            nav ul li a {
+                font-size: 18px;
+                text-decoration: none;
+                display: block;
+                color: #808080;
+                text-align: center;
+                padding: 0 20px;
+            }
+
+                nav ul li a:hover {
+                    color: red;
+                }
+
+/* Set padding to keep content from hitting the edges */
+
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists
+   will truncate terms that are too long to fit in the left column
+*/
+
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+
+input, select, textarea {
+    max-width: 280px;
+}
