@@ -133,12 +133,15 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="article.html" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\Ueditor.css" />
     <Content Include="editor.html" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="head.html" />
+    <Content Include="list.html" />
     <Content Include="neditor\.editorconfig" />
     <Content Include="neditor\.github\ISSUE_TEMPLATE.md" />
     <Content Include="neditor\.gitignore" />
