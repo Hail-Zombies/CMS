@@ -10,112 +10,176 @@
     <style type="text/css">
     </style>
 </head>
-
 <body>
+    @*锚点*@
+    <div id="anchor_top"></div>
+    @*锚点结束*@
+    <!-- 顶部导航栏 -->
+    <nav class="navbar navbar-inverse" role="navigation"
+         style="margin-bottom: 0;background-color: black;border-radius: 0;border: 0;">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">标识</a>
+            </div>
+            <div>
+                <ul class="nav navbar-nav nav-top">
+                    <li class="active"><a href="/">首页</a></li>
+                    <li><a href="#">SVN</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Java <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">jmeter</a></li>
+                            <li><a href="#">EJB</a></li>
+                            <li><a href="#">Jasper Report</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">分离的链接</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">另一个分离的链接</a></li>
+                        </ul>
+                    </li>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#"><span class="glyphicon glyphicon-user"></span> 注册</a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> 登录</a></li>
+                    </ul>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- 顶部导航栏结束 -->
+
     <div class="container-fluid">
-        <div class="row justify-content-center">
-            <div class="col-xl-2 d-xl-block d-none"></div>
-            <div class="col-xl-8 col-sm-12" style="padding: 0 0;">
-                <div class="container-fluid" style="margin-top: 1px; margin-bottom: 0px; ">
+        <!-- 母版头 -->
+        <div class="row">
+            <div class="col-xs-2"></div>
+            <div class="col-xs-8">
+                <div class="container-fluid" style="margin-top: 0px; margin-bottom: 0px; ">
                     <img src="~/image/148bf7ddd88766bafe822cbc79e132ec.jpeg" alt=" 图片丢失"
                          style=" width: 100%;height: auto;" />
                     <!-- <div style="margin-top: 2px; margin-bottom: 0px;height:40px;"> </div> -->
 
-                    <div style="margin-top: 2px;"></div>
-                    <nav class="navbar navbar-expand-lg navbar-light bg-light"
-                         style=" background-color: #87c2ff !important;">
-                        <a class="navbar-brand active" style="font-size: 1.5rem;font-weight: bolder;"
-                           href="/">首页</a>
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="collapse navbar-collapse" id="navbarNav">
-                            <!-- Navbar content -->
-                            <ul class="navbar-nav">
-                                <li class="nav-item"><a class="nav-link" href="#" title="部门一">部门一</a></li>
-                                <li class="nav-item"><a class="nav-link" href="#" title="部门二">部门二</a></li>
-                                <li class="nav-item"><a class="nav-link" href="#" title="部门三">部门三</a></li>
-                                <li class="nav-item"><a class="nav-link" href="#" title="部门四">部门四</a></li>
-                                <li class="nav-item"><a class="nav-link" href="#" title="部门五">部门五</a></li>
-                                <li class="nav-item"><a class="nav-link" href="#" title="部门六">部门六</a></li>
-                                <li class="nav-item"><a class="nav-link" href="#" title="部门七">部门七</a></li>
-                                <li class="nav-item"><a class="nav-link" href="#" title="部门八">部门八</a></li>
+                    <ul class="nav nav-top nav-simple nav-justified" style="border: 0;background-color:azure">
+                        <li class="active">
+                            <a href="###">部门一 </a>
+                        </li>
+                        <li>
+                            <a href="###">部门二 </a>
+                        </li>
+                        <li>
+                            <a href="###">部门三 </a>
+                        </li>
+                        <li>
+                            <a href="###">部门四 </a>
+                        </li>
+                        <li>
+                            <a href="###">部门五 </a>
+                        </li>
+                        <li>
+                            <a href="###">部门六 </a>
+                        </li>
+                        <li class="">
+                            <a href="###">
+                                动态
+                                <!-- <span class="label label-badge label-success pull-right">4</span> -->
+                            </a>
+                        </li>
+                        <li class="dropdown  dropdown-hover">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="###">更多</a>
+                            <ul class="dropdown-menu">
+                                <li class="dropdown-header">下拉菜单标题</li>
+                                <li>
+                                    <a href="">任务</a>
+                                </li>
+                                <li>
+                                    <a href="">目标</a>
+                                </li>
+                                <li class="divider"></li>
+                                <li class="dropdown-header">下拉菜单标题</li>
+                                <li>
+                                    <a href="">需求</a>
+                                </li>
+                                <li>
+                                    <a href="">用例</a>
+                                </li>
+                                <li class="dropdown-submenu">
+                                    <a href="###">在左侧显示</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="###">复制</a></li>
+                                        <li><a href="###">粘贴</a></li>
+                                        <li><a href="###">剪切</a></li>
+                                    </ul>
+                                </li>
                             </ul>
-                        </div>
-                    </nav>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-xs-1">
+                <div class="container">
+                    @*<div class="btn-group-vertical toolbar">
+                            <button type="button" class="btn btn-lg">按钮 1</button>
+                            <button type="button" class="btn btn-lg">按钮 2</button>
+                            <div class="btn-group-vertical dropdown dropdown-hover">
+                                <button type="button" class="btn btn-lg dropdown-toggle" data-toggle="dropdown">
+                                    下拉
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">下拉链接 1</a></li>
+                                    <li><a href="#">下拉链接 2</a></li>
+                                </ul>
+                            </div>
+                        </div>*@
 
-                    <div style="margin-top: 2px;"></div>
-
-                    <div class="row weather">
-                        <div class="col-lg-1 d-lg-block d-none" style="padding-right: 0; text-align: center;">
-                            <a href="#" style="white-space: nowrap;">天气：</a>
-                        </div>
-                        <div class="col-lg-11  col-sm-12">
-                            <marquee onMouseOut="this.start()" onMouseOver="this.stop()">
-                                北京
-                                今天：小雨
-
-                                17°~24°C
-                                无持续风向&lt;3级
-                            </marquee>
-                        </div>
+                    <div class="toolbar-icon">
+                        <ul style="list-style-type: none;">
+                            <li>
+                                <a href="Editor">
+                                    <i class="icon icon-edit icon-5x"
+                                       style="color: rgba(9, 61, 75);opacity: 0.5;"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" onclick="back_history()">
+                                    <i class="icon icon-chevron-sign-left icon-5x"
+                                       style="color: rgba(9, 61, 75);opacity: 0.5;"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#anchor_top">
+                                    <i class="icon icon-chevron-sign-up icon-5x"
+                                       style="color: rgba(9, 61, 75);opacity: 0.5;"></i>
+                                </a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
-            <div class="col-xl-2 d-xl-block d-none">
+            <div class="col-xs-1">
                 <div class="container">
-                    <table class="table func-button">
-                        <tbody>
-                            <tr>
-                                <td>
-                                    <a href="/Editor" style=" border: 1px solid #75a56d">发布文章</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <a href="#" style=" border: 1px solid #75a56d">功能二</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <a href="#" style=" border: 1px solid #75a56d">功能三</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <a href="#" style=" border: 1px solid #75a56d">功能四</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <a href="#" style=" border: 1px solid #75a56d">功能五</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <a href="#" style=" border: 1px solid #75a56d">功能六</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <a href="#" style=" border: 1px solid #75a56d">功能七</a>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
                 </div>
             </div>
         </div>
-        <div class="row justify-content-center">
-            @RenderBody()
-        </div>
-        <div class="row justify-content-center">
-            <div class="col-xl-8 col-sm-12" style="padding: 0 0;">
-                <footer>
-                    <div class="container-fluid" style="margin-top: 1px; margin-bottom: 0px; ">
+        <!-- 母版头结束 -->
+
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/zui")
+
+        <div class="row">
+            <div class="col-xs-2"></div>
+            <div class="col-xs-8">
+                <!-- 内容 -->
+                <div class="container-fluid" style="margin-top: 1px; margin-bottom: 0px; ">
+                    <!-- 内容容器 -->
+                    @RenderBody()
+                    <!-- 内容容器结束 -->
+                </div>
+                <!-- 内容结束 -->
+                <div class="container-fluid" style="margin-top: 1px; margin-bottom: 0px; ">
+                    <footer>
                         <HR align=center width=100% color=#987cb9 SIZE=2>
-                        <ul class="nav" style="padding-left: 40px;">
+                        <ul class="nav nav-pills nav-justified" style="padding: 0 10%;">
                             <li><a href="#">友情链接</a>&nbsp;&nbsp;&nbsp;&nbsp;</li>
                             <li><a href="#">友情链接</a>&nbsp;&nbsp;&nbsp;&nbsp;</li>
                             <li><a href="#">友情链接</a>&nbsp;&nbsp;&nbsp;&nbsp;</li>
@@ -123,13 +187,22 @@
                             <li><a href="#">友情链接</a>&nbsp;&nbsp;&nbsp;&nbsp;</li>
                         </ul>
                         <p>&copy; @DateTime.Now.Year - 我的 ASP.NET 应用程序</p>
-                    </div>
-                </footer>
+                    </footer>
+                </div>
+            </div>
+            <div class="col-xs-2">
             </div>
         </div>
-        @Scripts.Render("~/bundles/jquery")
-        @Scripts.Render("~/bundles/zui")
-        @RenderSection("scripts", required: false)
     </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/zui")
+
+    <script type="text/javascript">
+        function back_history() {
+            history.back();
+        }
+    </script>
+
+    @RenderSection("scripts", required: false)
 </body>
 </html>

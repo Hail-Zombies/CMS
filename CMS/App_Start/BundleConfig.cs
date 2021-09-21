@@ -22,6 +22,12 @@ namespace CMS
             //bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
             //          "~/Scripts/bootstrap.js"));
 
+            bundles.Add(new StyleBundle("~/Content/css").Include(
+                      //"~/Content/bootstrap.css",
+                      "~/zui/css/zui.css",
+                      "~/Content/site.css",
+                      "~/Content/Ueditor.css"));
+
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js"));
 
@@ -29,11 +35,10 @@ namespace CMS
                 "~/zui/js/zui.min.js"
                 ));
 
-            bundles.Add(new StyleBundle("~/Content/css").Include(
-                      //"~/Content/bootstrap.css",
-                      "~/zui/js/zui.css",
-                      "~/Content/site.css",
-                      "~/Content/Ueditor.css"));
+            bundles.Add(new ScriptBundle("~/bundles/zui/lib").Include(
+                 "~/zui/lib/chart/zui.chart.min.js",
+                 "~/zui/lib/kindeditor/kindeditor.js"
+                ));
         }
     }
 }

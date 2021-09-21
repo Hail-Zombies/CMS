@@ -1,51 +1,21 @@
 ﻿@{
     ViewBag.Title = "编辑器";
 }
-<div class="col-xl-8 col-sm-12" style="padding: 0 0;">
-    <div class="container-fluid" style="margin-top: 1px; margin-bottom: 0px; ">
-        @*<script type="text/javascript" charset="utf-8" src="neditor/neditor.config.js"></script>
-            <script type="text/javascript" charset="utf-8" src="neditor/_examples/editor_api.js"></script>
-            <script type="text/javascript" charset="utf-8" src="neditor/neditor.service.js"></script>
-            建议手动加在语言，避免在ie下有时因为加载语言失败导致编辑器加载失败
-            这里加载的语言文件会覆盖你在配置项目里添加的语言类型，比如你在配置项目里配置的是英文，这里加载的中文，那最后就是中文
-            <script type="text/javascript" charset="utf-8" src="neditor/i18n/zh-cn/zh-cn.js"></script>
 
-            <script type="text/javascript" src="neditor/third-party/browser-md5-file.min.js"></script>
-            <script type="text/javascript" src="neditor/third-party/jquery-1.10.2.min.js"></script>*@
+@Scripts.Render("~/bundles/zui/lib")
 
-        <script type="text/javascript" charset="utf-8" src="~/ueditor/ueditor.config.js"></script>
-        <script type="text/javascript" charset="utf-8" src="~/ueditor/ueditor.all.js"></script>
-        <script type="text/javascript" charset="utf-8" src="~/ueditor/lang/zh-cn/zh-cn.js"></script>
-        <script id="editor" name="content" type="text/plain"></script>
-        <script type="text/javascript">
-            var ue = UE.getEditor('editor',
-                {
-                    toolbars:
-                        [
+<ol class="breadcrumb">
+    <li><a href="/">首页</a></li>
+    <li class="active">编辑页</li>
+</ol>
 
-                            ['fullscreen', 'undo', 'redo', '|',
-                                'customstyle', 'paragraph', 'fontfamily', 'fontsize', '|',
-                                'bold', 'italic', 'underline', 'fontborder', 'strikethrough', 'superscript', 'subscript', 'removeformat', 'formatmatch', 'autotypeset', 'blockquote', 'pasteplain', '|', 'forecolor', 'backcolor', 'insertorderedlist', 'insertunorderedlist', 'selectall', 'cleardoc', '|',
-                                'simpleupload', 'insertimage', 'insertvideo', 'music', 'attachment', 'pagebreak', 'template', 'background',
-                            ],
-                            [
-                                'print', 'preview', 'searchreplace', 'drafts', 'help',
+<textarea id="content" name="content" class="form-control kindeditor" style="height:850px;width:100%">Hello, world!</textarea>
 
-                                '|', 'justifyleft', 'justifycenter', 'justifyright', 'justifyjustify', '|',
-                                'imagenone', 'imageleft', 'imageright', 'imagecenter',
-
-                                '|', 'indent', 'rowspacingtop', 'rowspacingbottom', 'lineheight', '|',
-
-                                'link', 'unlink', 'anchor', '|',
-                                'horizontal', 'date', 'time', 'spechars', 'snapscreen', 'wordimage', '|',
-
-                                'inserttable', 'deletetable', 'insertparagraphbeforetable', 'insertrow', 'deleterow', 'insertcol', 'deletecol', 'mergecells', 'mergeright', 'mergedown', 'splittocells', 'splittorows', 'splittocols', 'charts'
-                            ]
-                        ],
-                    autoHeightEnabled: true,
-                    initialFrameWidth: '100%',
-                    initialFrameHeight: 500
-                });
-        </script>
-    </div>
-</div>
+<script>
+    KindEditor.create('textarea.kindeditor', {
+        basePath: '/zui/lib/kindeditor',
+        allowFileManager: true,
+        bodyClass: 'article-content', // 确保编辑器内的内容也应用 ZUI 排版样式
+        cssPath: '/zui/css/zui.css', // 确保编辑器内的内容也应用 ZUI 排版样式
+    });
+</script>

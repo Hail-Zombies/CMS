@@ -3,7 +3,9 @@
     font-weight: bolder;
 }
 
-.nav-top.navbar-nav>.active>a, .nav-top.navbar-nav>.active>a:hover, .nav-top.navbar-nav>.active>a:focus {
+.nav-top.navbar-nav > .active > a,
+.nav-top.navbar-nav > .active > a:hover,
+.nav-top.navbar-nav > .active > a:focus {
     color: #fff;
     background-color: #495569;
 }
@@ -29,7 +31,6 @@
     width: 8rem;
     background-color: #f5faf2;
     border: 1px solid #75a56d"
-
 }
 
 .toolbar td {
@@ -62,9 +63,9 @@ table.toolbar {
     z-index: 11;
 }
 
-.toolbar-icon>ul {
-    padding-left: 0;
-}
+    .toolbar-icon > ul {
+        padding-left: 0;
+    }
 
 .toolbar .btn {
     margin-top: 10px !important;
@@ -85,7 +86,7 @@ table.toolbar {
     width: 100%;
 }
 
-div.ratio{
+div.ratio {
     display: block !important;
     width: 100% !important;
     height: 0 !important;
@@ -93,7 +94,7 @@ div.ratio{
     overflow: hidden !important;
 }
 
-div.ratio-img{
+div.ratio-img {
     padding-top: 20px;
     display: block !important;
     width: 100% !important;
@@ -112,24 +113,24 @@ div.ratio img {
     overflow: hidden;
 }
 
-.carousel-news .item a {
-    font-size: 16px;
-    text-decoration: underline;
-    position: absolute;
-    right: 0px;
-    bottom: 0px;
-    left: 0px;
-    z-index: 11;
-    margin-top: 0;
-    margin-bottom: 0;
-    padding-left: 12px;
-    padding-right: 12px;
-    color: #fff;
-    text-overflow: ellipsis;
-    /*值为clip表示剪切，ellipsis时为显示省略号 */
-    overflow: hidden;
-    white-space: nowrap;
-}
+    .carousel-news .item a {
+        font-size: 16px;
+        text-decoration: underline;
+        position: absolute;
+        right: 0px;
+        bottom: 0px;
+        left: 0px;
+        z-index: 11;
+        margin-top: 0;
+        margin-bottom: 0;
+        padding-left: 12px;
+        padding-right: 12px;
+        color: #fff;
+        text-overflow: ellipsis;
+        /*值为clip表示剪切，ellipsis时为显示省略号 */
+        overflow: hidden;
+        white-space: nowrap;
+    }
 
 .carousel-news .carousel-caption {
     display: block;
@@ -163,18 +164,18 @@ div.ratio img {
     position: relative;
 }
 
-.detitle span {
-    border-bottom: 4px solid #bd1818;
-    padding-bottom: 12px;
-}
+    .detitle span {
+        border-bottom: 4px solid #bd1818;
+        padding-bottom: 12px;
+    }
 
-.detitle .more {
-    font-size: 16px;
-    color: #999999;
-    position: absolute;
-    right: 0;
-    bottom: 10px;
-}
+    .detitle .more {
+        font-size: 16px;
+        color: #999999;
+        position: absolute;
+        right: 0;
+        bottom: 10px;
+    }
 
 .news ul {
     position: relative;
@@ -195,7 +196,7 @@ div.ratio img {
     color: darkorchid;
 } */
 
-.news li>* {
+.news li > * {
     font-size: 18px;
     vertical-align: top;
     display: inline-block;
@@ -203,7 +204,7 @@ div.ratio img {
     padding: 0px;
 }
 
-.news li>p {
+.news li > p {
     position: absolute;
     right: 0px;
 }
@@ -217,6 +218,12 @@ div.ratio img {
     vertical-align: bottom;
 }
 
-.table th, .table td {
+.table th,
+.table td {
     border-bottom: 0px solid #ddd;
+}
+
+.breadcrumb {
+    font-size: 2rem;
+    margin-bottom: 0;
 }

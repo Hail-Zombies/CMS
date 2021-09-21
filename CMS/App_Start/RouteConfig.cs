@@ -21,11 +21,11 @@ namespace CMS
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
 
-            routes.MapRoute(
-                name: "Editor",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Editor" }
-            );
+            //routes.MapRoute(
+            //    name: "Editor",
+            //    url: "{controller}/{action}/{id}",
+            //    defaults: new { controller = "Home", action = "Editor" }
+            //);
         }
     }
 }
