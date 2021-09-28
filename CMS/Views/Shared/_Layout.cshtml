@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/zui")
+
     @*@Scripts.Render("~/bundles/modernizr")*@
     <style type="text/css">
     </style>
@@ -22,8 +25,8 @@
                 <a class="navbar-brand" href="/">标识</a>
             </div>
             <div>
-                <ul class="nav navbar-nav nav-top">
-                    <li class="active"><a href="/">首页</a></li>
+                <ul class="nav navbar-nav nav-top" style="font-size:large">
+                    <li><a href="#">首页</a></li>
                     <li><a href="#">SVN</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -39,10 +42,10 @@
                             <li><a href="#">另一个分离的链接</a></li>
                         </ul>
                     </li>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#"><span class="glyphicon glyphicon-user"></span> 注册</a></li>
-                        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> 登录</a></li>
-                    </ul>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#"><span class="glyphicon glyphicon-user"></span> 注册</a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> 登录</a></li>
                 </ul>
             </div>
         </div>
@@ -52,7 +55,8 @@
     <div class="container-fluid">
         <!-- 母版头 -->
         <div class="row">
-            <div class="col-xs-2"></div>
+            <div class="col-xs-2">
+            </div>
             <div class="col-xs-8">
                 <div class="container-fluid" style="margin-top: 0px; margin-bottom: 0px; ">
                     <img src="~/image/148bf7ddd88766bafe822cbc79e132ec.jpeg" alt=" 图片丢失"
@@ -60,7 +64,7 @@
                     <!-- <div style="margin-top: 2px; margin-bottom: 0px;height:40px;"> </div> -->
 
                     <ul class="nav nav-top nav-simple nav-justified" style="border: 0;background-color:azure">
-                        <li class="active">
+                        <li>
                             <a href="###">部门一 </a>
                         </li>
                         <li>
@@ -114,60 +118,60 @@
                         </li>
                     </ul>
                 </div>
-            </div>
-            <div class="col-xs-1">
-                <div class="container">
-                    @*<div class="btn-group-vertical toolbar">
-                            <button type="button" class="btn btn-lg">按钮 1</button>
-                            <button type="button" class="btn btn-lg">按钮 2</button>
-                            <div class="btn-group-vertical dropdown dropdown-hover">
-                                <button type="button" class="btn btn-lg dropdown-toggle" data-toggle="dropdown">
-                                    下拉
-                                    <span class="caret"></span>
-                                </button>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">下拉链接 1</a></li>
-                                    <li><a href="#">下拉链接 2</a></li>
-                                </ul>
-                            </div>
-                        </div>*@
 
-                    <div class="toolbar-icon">
-                        <ul style="list-style-type: none;">
-                            <li>
-                                <a href="Editor">
-                                    <i class="icon icon-edit icon-5x"
-                                       style="color: rgba(9, 61, 75);opacity: 0.5;"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0);" onclick="back_history()">
-                                    <i class="icon icon-chevron-sign-left icon-5x"
-                                       style="color: rgba(9, 61, 75);opacity: 0.5;"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#anchor_top">
-                                    <i class="icon icon-chevron-sign-up icon-5x"
-                                       style="color: rgba(9, 61, 75);opacity: 0.5;"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
             </div>
             <div class="col-xs-1">
-                <div class="container">
-                </div>
+                @if (IsSectionDefined("toolbar"))
+                {
+                    @RenderSection("toolbar", required: false)
+                }
+                else
+                {
+                    <div class="container">
+                        <div class="toolbar-icon">
+                            <ul style="list-style-type: none;">
+                                <li>
+                                    <a href="Editor">
+                                        <i class="icon icon-edit icon-5x"
+                                           style="color: rgba(9, 61, 75);opacity: 0.5;"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);" onclick="back_history()">
+                                        <i class="icon icon-chevron-sign-left icon-5x"
+                                           style="color: rgba(9, 61, 75);opacity: 0.5;"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#anchor_top">
+                                        <i class="icon icon-chevron-sign-up icon-5x"
+                                           style="color: rgba(9, 61, 75);opacity: 0.5;"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                }
+            </div>
+            <div class="col-xs-1">
+                @if (IsSectionDefined("toolbar2"))
+                {
+                    @RenderSection("toolbar2", required: false)
+                }
             </div>
         </div>
         <!-- 母版头结束 -->
 
-        @Scripts.Render("~/bundles/jquery")
-        @Scripts.Render("~/bundles/zui")
-
         <div class="row">
-            <div class="col-xs-2"></div>
+            <div class="col-xs-2">
+                @if (IsSectionDefined("tree_menu"))
+                {
+                    @RenderSection("tree_menu", required: false)
+                }
+                else
+                {
+                }
+            </div>
             <div class="col-xs-8">
                 <!-- 内容 -->
                 <div class="container-fluid" style="margin-top: 1px; margin-bottom: 0px; ">
@@ -194,8 +198,6 @@
             </div>
         </div>
     </div>
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/zui")
 
     <script type="text/javascript">
         function back_history() {
