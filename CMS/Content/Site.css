@@ -51,7 +51,7 @@ table.toolbar {
     top: 40%;
 }
 
-@media (max-height: 900px) {
+@media (max-height: 768px) {
     .toolbar {
         display: none;
     }

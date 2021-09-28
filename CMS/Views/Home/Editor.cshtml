@@ -9,13 +9,28 @@
     <li class="active">编辑页</li>
 </ol>
 
-<textarea id="content" name="content" class="form-control kindeditor" style="height:850px;width:100%">Hello, world!</textarea>
+<textarea id="content" name="content" class="form-control kindeditor" style="width:100%">Hello, world!</textarea>
+<
 
 <script>
-    KindEditor.create('textarea.kindeditor', {
+    var options = {
         basePath: '/zui/lib/kindeditor',
         allowFileManager: true,
         bodyClass: 'article-content', // 确保编辑器内的内容也应用 ZUI 排版样式
         cssPath: '/zui/css/zui.css', // 确保编辑器内的内容也应用 ZUI 排版样式
-    });
+        height :'600px',
+        items:  [
+            'source', '|', 'undo', 'redo', '|', 'preview', 'print', 'cut', 'copy', 'paste',
+            'plainpaste', 'wordpaste', '|', 'justifyleft', 'justifycenter', 'justifyright',
+            'justifyfull', 'insertorderedlist', 'insertunorderedlist', 'indent', 'outdent', 'subscript',
+            'superscript', 'clearhtml', 'quickformat', 'selectall', '|', 'fullscreen', '/',
+            'formatblock', 'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold',
+            'italic', 'underline', 'strikethrough', 'lineheight', 'removeformat', '|', 'image', 
+            'media', 'insertfile', 'table', 'hr', 'emoticons', 'pagebreak',
+            'anchor', 'link', 'unlink' ],
+
+    }
+
+    KindEditor.create('textarea.kindeditor', options);
+    
 </script>
