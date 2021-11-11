@@ -1,8 +1,8 @@
 /*!
- * ZUI: 标签页管理器 - v1.9.2 - 2020-07-09
+ * ZUI: 标签页管理器 - v1.10.0 - 2021-11-04
  * http://openzui.com
  * GitHub: https://github.com/easysoft/zui.git 
- * Copyright (c) 2020 cnezsoft.com; Licensed MIT
+ * Copyright (c) 2021 cnezsoft.com; Licensed MIT
  */
 
 /* ========================================================================
@@ -384,7 +384,7 @@
                 $tabPane.addClass('has-error');
                 var showMessage = that.options.showMessage;
                 if (showMessage) {
-                    if ($.isFunction(showMessage)) {
+                    if (typeof showMessage === 'function') {
                         error = showMessage(error);
                     }
                     that.showMessage(error, 'danger');

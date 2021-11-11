@@ -1,0 +1,65 @@
+﻿@{
+    ViewBag.Title = "编辑器";
+}
+
+@Scripts.Render("~/bundles/uditor")
+
+<ol class="breadcrumb">
+    <li><a href="/">首页</a></li>
+    <li class="active">编辑页</li>
+</ol>
+
+<script id="editor" name="editor" type="text/plain">这里写你的初始化内容</script>
+
+<button id="sub" class="btn  btn-primary" type="button" style="margin: 5px 2px;float: right;">
+    <i class="icon icon-save"></i>&nbsp提交
+</button>
+
+@* <script type="text/javascript">
+    var ue = UE.getEditor('editor');
+    </script> *@
+
+<script type="text/javascript">
+    var ue = UE.getEditor('editor',
+        {
+            toolbars:
+                [
+
+                    ['fullscreen', 'undo', 'redo', '|',
+                        'customstyle', 'paragraph', 'fontfamily', 'fontsize', '|',
+                        'bold', 'italic', 'underline', 'fontborder', 'strikethrough', 'superscript', 'subscript', 'removeformat', 'formatmatch', 'autotypeset', 'blockquote', 'pasteplain', '|', 'forecolor', 'backcolor', 'insertorderedlist', 'insertunorderedlist', 'selectall', 'cleardoc', '|',
+                        'simpleupload', 'insertimage', 'insertvideo', 'attachment', 'pagebreak', 'template', 'background'],
+
+                    ['print', 'preview', 'searchreplace', 'drafts', 'help',
+
+                        '|', 'justifyleft', 'justifycenter', 'justifyright', 'justifyjustify', '|',
+                        'imagenone', 'imageleft', 'imageright', 'imagecenter',
+
+                        '|', 'indent', 'rowspacingtop', 'rowspacingbottom', 'lineheight', '|',
+
+                        'link', 'unlink', 'anchor', '|',
+                        'horizontal', 'date', 'time', 'spechars', 'snapscreen', 'wordimage', '|',
+
+                        'inserttable', 'deletetable', 'insertparagraphbeforetable', 'insertrow', 'deleterow', 'insertcol', 'deletecol', 'mergecells', 'mergeright', 'mergedown', 'splittocells', 'splittorows', 'splittocols', 'charts'
+                    ]
+                ],
+            autoHeightEnabled: true,
+            initialFrameWidth: '100%',
+            initialFrameHeight: 500
+        });
+    $(document).ready(function () {
+        $("#sub").click(function () {
+            var html = ue.getContent();
+            $.ajax(
+                {
+                    type: "POST",
+                    url: "Submit",
+                    data: "",
+                    success: function (result) {
+                        alert(result);
+                    }
+                })
+        }
+        )
+    });
+</script>

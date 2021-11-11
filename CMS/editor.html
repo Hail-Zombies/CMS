@@ -171,20 +171,20 @@
                             <script type="text/javascript" charset="utf-8" src="ueditor/ueditor.config.js"></script>
                             <script type="text/javascript" charset="utf-8" src="ueditor/ueditor.all.js"></script>
                             <script type="text/javascript" charset="utf-8" src="ueditor/lang/zh-cn/zh-cn.js"></script>
-        
+
                             <script id="editor" name="content" type="text/plain"></script>
+                            <button onclick="getContent()" class="btn  btn-primary" type="button" style="margin: 5px 2px;float: right;"><i class="icon icon-save"></i>&nbsp提交</button>
                             <script type="text/javascript">
                                 var ue = UE.getEditor('editor',
                                     {
                                         toolbars:
                                             [
-        
                                                 ['fullscreen', 'undo', 'redo', '|',
                                                     'customstyle', 'paragraph', 'fontfamily', 'fontsize', '|',
                                                     'bold', 'italic', 'underline', 'fontborder', 'strikethrough', 'superscript', 'subscript', 'removeformat', 'formatmatch', 'autotypeset', 'blockquote', 'pasteplain', '|', 'forecolor', 'backcolor', 'insertorderedlist', 'insertunorderedlist', 'selectall', 'cleardoc', '|',
                                                     'simpleupload', 'insertimage', 'insertvideo', 'music', 'attachment', 'pagebreak', 'template', 'background'],
                                                 
-                                                   [ '|','print', 'preview', 'searchreplace', 'drafts', 'help',
+                                                   [ 'print', 'preview', 'searchreplace', 'drafts', 'help',
         
                                                     '|', 'justifyleft', 'justifycenter', 'justifyright', 'justifyjustify', '|',
                                                     'imagenone', 'imageleft', 'imageright', 'imagecenter',

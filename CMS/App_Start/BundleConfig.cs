@@ -35,6 +35,12 @@ namespace CMS
                 "~/zui/js/zui.min.js"
                 ));
 
+
+            bundles.Add(new ScriptBundle("~/bundles/uditor").Include(
+                "~/ueditor/ueditor.config.js",
+                "~/ueditor/ueditor.all.js"
+                ));
+
             bundles.Add(new ScriptBundle("~/bundles/zui/lib").Include(
                  "~/zui/lib/chart/zui.chart.min.js",
                  "~/zui/lib/kindeditor/kindeditor.js"
