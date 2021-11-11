@@ -16,20 +16,6 @@ namespace CMS.Controllers
             return View();
         }
 
-        [Route("Article")]
-        [Route("Home/Article")]
-        public ActionResult Article()
-        {
-            return View();
-        }
-
-        [Route("Editor")]
-        [Route("Home/Editor")]
-        public ActionResult Editor()
-        {
-            return View();
-        }
-
         [Route("List")]
         [Route("Home/List")]
         public ActionResult List()

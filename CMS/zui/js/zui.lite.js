@@ -1,8 +1,8 @@
 /*!
- * ZUI: Lite edition - v1.9.2 - 2020-07-09
+ * ZUI: Lite edition - v1.10.0 - 2021-11-04
  * http://openzui.com
  * GitHub: https://github.com/easysoft/zui.git 
- * Copyright (c) 2020 cnezsoft.com; Licensed MIT
+ * Copyright (c) 2021 cnezsoft.com; Licensed MIT
  */
 
 /*! Some code copy from Bootstrap v3.0.0 by @fat and @mdo. (Copyright 2013 Twitter, Inc. Licensed under http://www.apache.org/licenses/)*/
@@ -21,7 +21,7 @@
     /* Check jquery */
     if(typeof($) === 'undefined') throw new Error('ZUI requires jQuery');
 
-    // ZUI shared object
+    /* ZUI shared object */
     if(!$.zui) $.zui = function(obj) {
         if($.isPlainObject(obj)) {
             $.extend($.zui, obj);
@@ -38,14 +38,14 @@
     var lastUuidAmend = 0;
     $.zui({
         uuid: function(asNumber) {
-            var uuidNumber = (Date.now() - 1580890015292) * 10e7 + Math.floor(Math.random() * 10e4) * 10e2 + (lastUuidAmend++) % 10e2;
+            var uuidNumber = (Date.now() - 1580890015292) * 10e4 + Math.floor(Math.random() * 10e3) * 10 + (lastUuidAmend++) % 10;
             return asNumber ? uuidNumber : uuidNumber.toString(36);
         },
 
         callEvent: function(func, event, proxy) {
-            if($.isFunction(func)) {
+            if(typeof func === 'function') {
                 if(proxy !== undefined) {
-                    func = $.proxy(func, proxy);
+                    func = func.bind(proxy);
                 }
                 var result = func(event);
                 if(event) event.result = result;
@@ -56,9 +56,10 @@
 
         strCode: function(str) {
             var code = 0;
+            if (typeof str !== 'string') str = String(str);
             if(str && str.length) {
                 for(var i = 0; i < str.length; ++i) {
-                    code += i * str.charCodeAt(i);
+                    code += (i + 1) * str.charCodeAt(i);
                 }
             }
             return code;
@@ -254,7 +255,7 @@
 
         if(model && model.options) {
             var func = model.options[shortName];
-            if($.isFunction(func)) {
+            if(typeof func === 'function') {
                 e.result = $.zui.callEvent(func, e, model);
             }
         }
@@ -263,7 +264,7 @@
     };
 
     $.fn.callComEvent = function(component, eventName, params) {
-        if (params !== undefined && !$.isArray(params)) {
+        if (params !== undefined && !Array.isArray(params)) {
             params = [params];
         }
         var $this = this;
@@ -565,7 +566,7 @@
         var scrollSize = $.camelCase(['scroll', dimension].join('-'))
 
         this.$element
-            .one($.support.transition.end, $.proxy(complete, this))
+            .one($.support.transition.end, complete.bind(this))
             .emulateTransitionEnd(350)[dimension](this.$element[0][scrollSize])
     }
 
@@ -598,7 +599,7 @@
         if(!$.support.transition) return complete.call(this)
 
         this.$element[dimension](0)
-            .one($.support.transition.end, $.proxy(complete, this))
+            .one($.support.transition.end, complete.bind(this))
             .emulateTransitionEnd(350)
     }
 
@@ -823,14 +824,14 @@
      * Ticks of a whole day
      * @type {number}
      */
-    const ONEDAY_TICKS = 24 * 3600 * 1000;
+    var ONEDAY_TICKS = 24 * 3600 * 1000;
 
     /**
      * Create a Date instance
      * @param {Date|String|Number} date Date expression
      * @return {Date}
      */
-    const createDate = function(date) {
+    var createDate = function(date) {
         if (!(date instanceof Date)) {
             if (typeof date === 'number' && date < 10000000000) {
                 date *= 1000;
@@ -845,7 +846,7 @@
      * @param {Date|String|Number} date Date expression
      * @return {number}
      */
-    const getTimestamp = function(date) {
+    var getTimestamp = function(date) {
         return createDate(date).getTime();
     };
 
@@ -856,7 +857,7 @@
      * @param  {string}             [format='yyyy-MM-dd hh:mm:ss'] Date format string
      * @return {string}
      */
-    const formatDate = function(date, format) {
+    var formatDate = function(date, format) {
         date = createDate(date);
         if (format === undefined) {
             format = 'yyyy-MM-dd hh:mm:ss';
@@ -887,7 +888,7 @@
      * @param {number} milliseconds milliseconds value
      * @return {Date}
      */
-    const addMilliseconds = function(date, milliseconds) {
+    var addMilliseconds = function(date, milliseconds) {
         date.setTime(date.getTime() + milliseconds);
         return date;
     };
@@ -898,7 +899,7 @@
      * @param {number} days days value
      * @return {Date}
      */
-    const addDays = function(date, days) {
+    var addDays = function(date, days) {
         return addMilliseconds(date, days * ONEDAY_TICKS);
     };
 
@@ -906,7 +907,7 @@
      * Clone date to a new instance
      * @param {Date|String|Number} date date expression
      */
-    const cloneDate = function(date) {
+    var cloneDate = function(date) {
         return new Date(createDate(date).getTime());
     };
 
@@ -915,7 +916,7 @@
      * @param {number} year
      * @return {boolean}
      */
-    const isLeapYear = function(year) {
+    var isLeapYear = function(year) {
         return ((year % 4 === 0) && (year % 100 !== 0)) || (year % 400 === 0);
     };
 
@@ -925,7 +926,7 @@
      * @param  {number} month
      * @return {number}
      */
-    const getDaysInMonth = function(year, month) {
+    var getDaysInMonth = function(year, month) {
         return [31, (isLeapYear(year) ? 29 : 28), 31, 30, 31, 30, 31, 31, 30, 31, 30, 31][month];
     };
 
@@ -934,7 +935,7 @@
      * @param {Date}   date date
      * @return {number}
      */
-    const getDaysOfThisMonth = function(date) {
+    var getDaysOfThisMonth = function(date) {
         return getDaysInMonth(date.getFullYear(), date.getMonth());
     };
 
@@ -943,7 +944,7 @@
      * @param {Date}   date date
      * @return {Date}
      */
-    const clearTime = function(date) {
+    var clearTime = function(date) {
         date.setHours(0);
         date.setMinutes(0);
         date.setSeconds(0);
@@ -957,7 +958,7 @@
      * @param {number} monthsCount
      * @return {Date}
      */
-    const addMonths = function(date, monthsCount) {
+    var addMonths = function(date, monthsCount) {
         var n = date.getDate();
         date.setDate(1);
         date.setMonth(date.getMonth() + monthsCount);
@@ -971,7 +972,7 @@
      * @param  {number} [day=1] 1 ~ 7
      * @return {Date}
      */
-    const getLastWeekday = function(date, day) {
+    var getLastWeekday = function(date, day) {
         day = day || 1;
 
         var d = new Date(date.getTime());
@@ -987,7 +988,7 @@
      * @param {Date} date2
      * @return {boolean}
      */
-    const isSameDay = function(date1, date2) {
+    var isSameDay = function(date1, date2) {
         return date1.toDateString() === date2.toDateString();
     };
 
@@ -997,7 +998,7 @@
      * @param {Date} date2
      * @return {boolean}
      */
-    const isSameWeek = function(date1, date2) {
+    var isSameWeek = function(date1, date2) {
         var weekStart = getLastWeekday(date1);
         var weekEnd = addDays(cloneDate(weekStart), 7);
         return date2 >= weekStart && date2 < weekEnd;
@@ -1009,11 +1010,11 @@
      * @param {Date} date2
      * @return {boolean}
      */
-    const isSameYear = function(date1, date2) {
+    var isSameYear = function(date1, date2) {
         return date1.getFullYear() === date2.getFullYear();
     };
 
-    const exports = {
+    var exports = {
         formatDate: formatDate,
         createDate: createDate,
         date: {
@@ -1242,7 +1243,7 @@
      * @param  {object | arguments} args
      * @return {String}
      */
-    const formatString = function(str, args) {
+    var formatString = function(str, args) {
         if(arguments.length > 1) {
             var reg;
             if(arguments.length == 2 && typeof(args) == "object") {
@@ -1271,7 +1272,7 @@
      * @access public
      * @return {Boolean}
      */
-    const isNum = function(str) {
+    var isNum = function(str) {
         if(str !== null) {
             var r, re;
             re = /\d*/i;
@@ -1281,7 +1282,7 @@
         return false;
     };
 
-    const exports = {
+    var exports = {
         formatString: formatString,
         string: {
             format: formatString,
@@ -1575,7 +1576,7 @@
 
             // This may seem a little complicated, but it normalizes the special event
             // .add method between jQuery 1.4/1.4.1 and 1.4.2+
-            if($.isFunction(handleObj)) {
+            if(typeof handleObj === 'function') {
                 // 1.4, 1.4.1
                 old_handler = handleObj;
                 return new_handler;
@@ -2030,7 +2031,7 @@
         if (options.scrollInside) {
             $(window).on('resize.' + zuiname, function() {
                 if (that.isShown) {
-                    that.adjustPosition();
+                    that.adjustPosition(undefined, 100);
                 }
             });
         }
@@ -2063,12 +2064,18 @@
         return this.isShown ? this.hide() : this.show(_relatedTarget, position)
     }
 
-    Modal.prototype.adjustPosition = function(position) {
+    Modal.prototype.adjustPosition = function(position, delay) {
         var that = this;
+        clearTimeout(that.reposTask);
+        if (delay) {
+            that.reposTask = setTimeout(that.adjustPosition.bind(that, position, 0), delay);
+            return;
+        }
+
         var options = that.options;
         if(position === undefined) position = options.position;
         if(position === undefined || position === null) return;
-        if ($.isFunction(position)) {
+        if (typeof position === 'function') {
             position = position(that);
         }
         var $dialog = that.$element.find('.modal-dialog');
@@ -2081,19 +2088,23 @@
             var footerHeight = options.footerHeight;
             var $header = $dialog.find('.modal-header');
             var $footer = $dialog.find('.modal-footer');
-            if (typeof headerHeight !== 'number' && $header.length) {
-                headerHeight = $header.outerHeight();
-            } else if ($.isFunction(headerHeight)) {
-                headerHeight = headerHeight($header);
-            } else {
-                headerHeight = 0;
+            if (typeof headerHeight !== 'number') {
+                if ($header.length) {
+                    headerHeight = $header.outerHeight();
+                } else if (typeof headerHeight === 'function') {
+                    headerHeight = headerHeight($header);
+                } else {
+                    headerHeight = 0;
+                }
             }
-            if (typeof footerHeight !== 'number' && $footer.length) {
-                footerHeight = $footer.outerHeight();
-            } else if ($.isFunction(footerHeight)) {
-                footerHeight = footerHeight($footer);
-            } else {
-                footerHeight = 0;
+            if (typeof footerHeight !== 'number') {
+                if ($footer.length) {
+                    footerHeight = $footer.outerHeight();
+                } else if (typeof footerHeight === 'function') {
+                    footerHeight = footerHeight($footer);
+                } else {
+                    footerHeight = 0;
+                }
             }
             bodyCss.maxHeight = winHeight - headerHeight - footerHeight;
             bodyCss.overflow = $body[0].scrollHeight > bodyCss.maxHeight ? 'auto' : 'visible';
@@ -2180,8 +2191,8 @@
         if(that.options.moveable) that.setMoveable();
 
         if (that.options.backdrop !== false) {
-            that.$body.addClass('modal-open')
             that.setScrollbar();
+            that.$body.addClass('modal-open')
         }
 
         that.escape()
@@ -2257,7 +2268,7 @@
 
         $.support.transition && that.$element.hasClass('fade') ?
             that.$element
-            .one('bsTransitionEnd', $.proxy(that.hideModal, that))
+            .one('bsTransitionEnd', that.hideModal.bind(that))
             .emulateTransitionEnd(Modal.TRANSITION_DURATION) :
             that.hideModal()
     }
@@ -2265,23 +2276,23 @@
     Modal.prototype.enforceFocus = function() {
         $(document)
             .off('focusin.' + zuiname) // guard against infinite focus loop
-            .on('focusin.' + zuiname, $.proxy(function(e) {
+            .on('focusin.' + zuiname, (function(e) {
                 if(this.$element[0] !== e.target && !this.$element.has(e.target).length) {
                     this.$element.trigger('focus')
                 }
-            }, this))
+            }).bind(this))
     }
 
     Modal.prototype.escape = function() {
         if(this.isShown && this.options.keyboard) {
-            $(document).on('keydown.dismiss.' + zuiname, $.proxy(function(e) {
+            $(document).on('keydown.dismiss.' + zuiname, (function(e) {
                 if(e.which == 27) {
                     var et = $.Event('escaping.' + zuiname)
                     var result = this.$element.triggerHandler(et, 'esc')
                     if(result != undefined && (!result)) return
                     this.hide()
                 }
-            }, this))
+            }).bind(this))
         } else if(!this.isShown) {
             $(document).off('keydown.dismiss.' + zuiname)
         }
@@ -2310,10 +2321,10 @@
             this.$backdrop = $('<div class="modal-backdrop ' + animate + '" />')
                 .appendTo(this.$body)
 
-            this.$element.on('mousedown.dismiss.' + zuiname, $.proxy(function(e) {
+            this.$element.on('mousedown.dismiss.' + zuiname, (function(e) {
                 if(e.target !== e.currentTarget) return
                 this.options.backdrop == 'static' ? this.$element[0].focus.call(this.$element[0]) : this.hide.call(this)
-            }, this))
+            }).bind(this))
 
             if(doAnimate) this.$backdrop[0].offsetWidth // force reflow
 
@@ -2348,7 +2359,7 @@
     Modal.prototype.setScrollbar = function() {
         if($.zui.fixBodyScrollbar()) {
             if (this.options.onSetScrollbar) {
-                this.options.onSetScrollbar(paddingRight);
+                this.options.onSetScrollbar();
             }
         }
     }
@@ -2458,6 +2469,9 @@
         this.$trigger = $trigger;
         this.options = options;
         this.id = $.zui.uuid();
+        if (options.show) {
+            this.show();
+        }
     };
 
     ModalTrigger.DEFAULTS = {
@@ -2508,7 +2522,7 @@
 
                 if($doms && $doms.length) {
                     options.custom = $doms;
-                } else if($.isFunction(window[options.custom])) {
+                } else if(typeof window[options.custom] === 'function') {
                     options.custom = window[options.custom];
                 }
             }
@@ -2525,13 +2539,24 @@
         }
         $modal = $('<div id="' + options.name + '" class="modal modal-trigger ' + (options.className || '') + '">' + (typeof options.loadingIcon === 'string' && options.loadingIcon.indexOf('icon-') === 0 ? ('<div class="icon icon-spin loader ' + options.loadingIcon + '"></div>') : options.loadingIcon) + '<div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button class="close" data-dismiss="modal">×</button><h4 class="modal-title"><i class="modal-icon"></i> <span class="modal-title-name"></span></h4></div><div class="modal-body"></div></div></div></div>').appendTo('body').data(NAME, that);
 
-        var bindEvent = function(optonName, eventName) {
-            var handleFunc = options[optonName];
-            if($.isFunction(handleFunc)) $modal.on(eventName + ZUI_MODAL, handleFunc);
+        var bindEvent = function(optonName, eventName, handleFunc) {
+            handleFunc = handleFunc || options[optonName];
+            if(typeof handleFunc === 'function') $modal.on(eventName + ZUI_MODAL, handleFunc);
         };
         bindEvent('onShow', 'show');
         bindEvent('shown',  'shown');
-        bindEvent('onHide', 'hide');
+        bindEvent('onHide', 'hide', function(e) {
+            if (options.type === 'iframe' && that.$iframeBody) {
+                var result = that.$iframeBody.triggerHandler('modalhide' + ZUI_MODAL, [that]);
+                if (result === false) {
+                    e.preventDefault();
+                }
+            }
+            var handleFunc = options.onHide;
+            if (handleFunc) {
+                return handleFunc(e);
+            }
+        });
         bindEvent('hidden', 'hidden');
         bindEvent('loaded', 'loaded');
 
@@ -2610,6 +2635,7 @@
 
                 if(options.type != 'iframe') {
                     $body = $dialog.off('resize.' + NAME).find('.modal-body').off('resize.' + NAME);
+                    if(options.scrollInside) $body = $body.children().off('resize.' + NAME);
                     ($body.length ? $body : $dialog).on('resize.' + NAME, resizeDialog);
                 }
 
@@ -2618,7 +2644,7 @@
         };
 
         if(options.type === 'custom' && custom) {
-            if($.isFunction(custom)) {
+            if(typeof custom === 'function') {
                 var customContent = custom({
                     modal: $modal,
                     options: options,
@@ -2677,6 +2703,7 @@
                             // todo: update iframe url to ref attribute
 
                             var $framebody = frame$('body').addClass('body-modal').toggleClass('body-modal-scroll-inside', scrollInside);
+                            that.$iframeBody = $framebody;
                             if(options.iframeBodyClass) $framebody.addClass(options.iframeBodyClass);
                             var frameSizeRecords = [];
                             var ajustFrameSize = function(check) {
@@ -2690,7 +2717,7 @@
                                     var headerHeight = options.headerHeight;
                                     if (typeof headerHeight !== 'number') {
                                         headerHeight = $header.outerHeight();
-                                    } else if ($.isFunction(headerHeight)) {
+                                    } else if (typeof headerHeight === 'function') {
                                         headerHeight = headerHeight($header);
                                     }
                                     var winHeight = $(window).height();
@@ -2787,7 +2814,7 @@
         var that = this;
         if(callback || redirect) {
             that.$modal.on('hidden' + ZUI_MODAL, function() {
-                if($.isFunction(callback)) callback();
+                if(typeof callback === 'function') callback();
 
                 if(typeof redirect === STR_STRING && redirect.length && !that.$modal.data('cancel-reload')) {
                     if(redirect === 'this') window.location.reload();
@@ -2805,7 +2832,7 @@
 
     ModalTrigger.prototype.adjustPosition = function(position) {
         position = position === undefined ? this.options.position : position;
-        if ($.isFunction(position)) {
+        if (typeof position === 'function') {
             position = position(this);
         }
         this.$modal.modal('adjustPosition', position);
@@ -2826,8 +2853,11 @@
                     type: $this.hasClass('iframe') ? 'iframe' : ''
                 }, $this.data(), $.isPlainObject(option) && option);
             if(!data) $this.data(NAME, (data = new ModalTrigger(options, $this)));
-            if(typeof option == STR_STRING) data[option](settings);
-            else if(options.show) data.show(settings);
+            else {
+                if(typeof option == STR_STRING) data[option](settings);
+                else if(options.show) data.show(settings);
+                return;
+            }
 
             $this.on((options.trigger || 'click') + '.toggle.' + NAME, function(e) {
                 options = $.extend(options, {
@@ -2865,7 +2895,7 @@
     // callback, redirect, modal
     var closeModal = function(modal, callback, redirect) {
         var originModal = modal;
-        if($.isFunction(modal)) {
+        if(typeof modal === 'function') {
             var oldModal = redirect;
             redirect = callback;
             callback = modal;
@@ -3000,13 +3030,13 @@
             var trigger = triggers[i]
 
             if(trigger == 'click') {
-                this.$element.on('click.' + this.type, this.options.selector, $.proxy(this.toggle, this))
+                this.$element.on('click.' + this.type, this.options.selector, this.toggle.bind(this))
             } else if(trigger != 'manual') {
                 var eventIn = trigger == 'hover' ? 'mouseenter' : 'focus'
                 var eventOut = trigger == 'hover' ? 'mouseleave' : 'blur'
 
-                this.$element.on(eventIn + '.' + this.type, this.options.selector, $.proxy(this.enter, this))
-                this.$element.on(eventOut + '.' + this.type, this.options.selector, $.proxy(this.leave, this))
+                this.$element.on(eventIn + '.' + this.type, this.options.selector, this.enter.bind(this))
+                this.$element.on(eventOut + '.' + this.type, this.options.selector, this.leave.bind(this))
             }
         }
 
@@ -3603,7 +3633,7 @@
         $items.eq(index).focus()
     }
 
-    function clearMenus() {
+    function clearMenus(e) {
         $(backdrop).remove()
         $(toggle).each(function(e) {
             var $parent = getParent($(this))
@@ -3662,7 +3692,7 @@
     var apiName = zuiname + '.data-api'
     $(document)
         .on('click.' + apiName, clearMenus)
-        .on('click.' + apiName, '.dropdown form', function(e) {
+        .on('click.' + apiName, '.dropdown form,.not-clear-menu', function(e) {
             e.stopPropagation()
         })
         .on('click.' + apiName, toggle, Dropdown.prototype.toggle)
@@ -3714,8 +3744,8 @@
             this.$items = null
 
         this.options.pause == 'hover' && this.$element
-            .on('mouseenter', $.proxy(this.pause, this))
-            .on('mouseleave', $.proxy(this.cycle, this))
+            .on('mouseenter', this.pause.bind(this))
+            .on('mouseleave', this.cycle.bind(this))
     }
 
     Carousel.DEFAULTS = {
@@ -3772,7 +3802,7 @@
 
         this.interval && clearInterval(this.interval)
 
-        this.options.interval && !this.paused && (this.interval = setInterval($.proxy(this.next, this), this.options.interval))
+        this.options.interval && !this.paused && (this.interval = setInterval(this.next.bind(this), this.options.interval))
 
         return this
     }
