@@ -35,7 +35,6 @@ namespace CMS
                 "~/zui/js/zui.min.js"
                 ));
 
-
             bundles.Add(new ScriptBundle("~/bundles/uditor").Include(
                 "~/ueditor/ueditor.config.js",
                 "~/ueditor/ueditor.all.js"
