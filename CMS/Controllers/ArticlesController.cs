@@ -14,7 +14,7 @@ namespace CMS.Controllers
     {
         //跳转文章页
         [Route("Article")]
-        [Route("Article/Article")]
+        [Route("Articles/Article")]
         public ActionResult Article()
         {
             return View();
@@ -22,7 +22,7 @@ namespace CMS.Controllers
 
         //跳转编辑页
         [Route("Editor")]
-        [Route("Article/Editor")]
+        [Route("Articles/Editor")]
         public ActionResult Editor()
         {
             return View();
@@ -36,6 +36,23 @@ namespace CMS.Controllers
         }
 
         private ArticleModel db = new ArticleModel();
+
+        /// <summary>
+        /// 获取文章内容
+        /// </summary>
+        /// <returns>返回文章</returns>
+        [Route("GetArticle")]
+        [Route("Articles/GetArticle")]
+        public ActionResult GetArticle()
+        {
+            int id = Convert.ToInt32(Request.QueryString["id"]);
+            Articles articles = db.Articles.Find(id);
+            if (articles == null)
+            {
+                return Content("文章好像丢失了。。。。。。");
+            }
+            return Content(articles.Content);
+        }
 
         // GET: Articles
         public ActionResult Index()

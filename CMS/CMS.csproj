@@ -160,8 +160,8 @@
     <Content Include="Global.asax" />
     <Content Include="head.html" />
     <Content Include="list.html" />
-    <Content Include="Models\dbo.Articles.sql" />
-    <Content Include="Models\InsertArticle.sql" />
+    <Content Include="App_Data\dbo.Articles.sql" />
+    <Content Include="App_Data\InsertArticle.sql" />
     <Content Include="testeditor.html" />
     <Content Include="ueditor\dialogs\anchor\anchor.html" />
     <Content Include="ueditor\dialogs\attachment\attachment.css" />
@@ -747,9 +747,7 @@
     <Content Include="Views\Articles\Edit.cshtml" />
     <Content Include="Views\Articles\Index.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
