@@ -16,6 +16,9 @@ namespace CMS.Models
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Articles>()
+                .Property(e => e.Content_HASH)
+                .IsFixedLength();
         }
     }
 }

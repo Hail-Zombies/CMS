@@ -30,5 +30,9 @@ namespace CMS.Models
         [Required]
         [StringLength(500)]
         public string Abstract { get; set; }
+
+        [Required]
+        [MaxLength(32)]
+        public byte[] Content_HASH { get; set; }
     }
 }

@@ -5,6 +5,7 @@ using System.Data.Entity;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Security.Cryptography;
 using System.Web;
 using System.Web.Mvc;
 using CMS.Models;
@@ -42,9 +43,18 @@ namespace CMS.Controllers
             var sr = new StreamReader(Request.InputStream);
             var stream = sr.ReadToEnd();
             Articles articles = JsonConvert.DeserializeObject<Articles>(stream);
+
+            byte[] bytValue = System.Text.Encoding.UTF8.GetBytes(articles.Content);
+            SHA256 sha256 = new SHA256CryptoServiceProvider();
+            byte[] retValue = sha256.ComputeHash(bytValue);
+
             articles.Update_time = DateTime.Now;
+            articles.Content_HASH = retValue;
+
             if (articles != null)
             {
+                db.Articles.Add(articles);
+                db.SaveChanges();
                 return Content("保存成功");
             }
             return Content("保存失败");
