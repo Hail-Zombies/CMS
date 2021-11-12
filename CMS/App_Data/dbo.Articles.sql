@@ -1,5 +1,5 @@
 ﻿CREATE TABLE [dbo].[Articles] (
-    [Id]          INT            NOT NULL,
+    [Id]          INT            NOT NULL IDENTITY,
     [Title]       NVARCHAR (200) NOT NULL,
     [Author]      NVARCHAR (50)  NOT NULL,
     [Content]     NVARCHAR (MAX) NOT NULL,

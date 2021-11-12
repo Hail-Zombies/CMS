@@ -8,7 +8,6 @@ namespace CMS.Models
 
     public partial class Articles
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Id { get; set; }
 
         [Required]
