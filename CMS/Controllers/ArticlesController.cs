@@ -13,6 +13,12 @@ using Newtonsoft.Json;
 
 namespace CMS.Controllers
 {
+    public class AjaxResult
+    {
+        public bool res;
+        public string massage;
+    }
+
     public class ArticlesController : Controller
     {
         //跳转文章页
@@ -35,7 +41,6 @@ namespace CMS.Controllers
         /// 提交编辑的文章
         /// </summary>
         /// <returns>成功则返回成功</returns>
-        [HttpPost]
         [Route("Submit")]
         [Route("Articles/Submit")]
         public ActionResult Submit()
@@ -51,11 +56,24 @@ namespace CMS.Controllers
             articles.Update_time = DateTime.Now;
             articles.Content_HASH = retValue;
 
+            var temp = from p in db.Articles
+                       where p.Content_HASH == retValue
+                       orderby p.Id descending
+                       select p;
+            AjaxResult ajaxResult = new AjaxResult();
             if (articles != null)
             {
-                db.Articles.Add(articles);
-                db.SaveChanges();
-                return Content("保存成功");
+                if (temp.Count() == 0)
+                {
+                    ajaxResult
+                    db.Articles.Add(articles);
+                    db.SaveChanges();
+                    return JsonConvert
+                }
+                else
+                {
+                    return Content("已存在相同的文章");
+                }
             }
             return Content("保存失败");
         }
