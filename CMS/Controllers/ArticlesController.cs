@@ -16,7 +16,17 @@ namespace CMS.Controllers
     public class AjaxResult
     {
         public bool res;
-        public string massage;
+        public string message;
+
+        public AjaxResult()
+        {
+        }
+
+        public AjaxResult(bool res, string message)
+        {
+            this.res = res;
+            this.message = message;
+        }
     }
 
     public class ArticlesController : Controller
@@ -41,6 +51,7 @@ namespace CMS.Controllers
         /// 提交编辑的文章
         /// </summary>
         /// <returns>成功则返回成功</returns>
+        [HttpPost]
         [Route("Submit")]
         [Route("Articles/Submit")]
         public ActionResult Submit()
@@ -60,22 +71,27 @@ namespace CMS.Controllers
                        where p.Content_HASH == retValue
                        orderby p.Id descending
                        select p;
-            AjaxResult ajaxResult = new AjaxResult();
+
             if (articles != null)
             {
                 if (temp.Count() == 0)
                 {
-                    ajaxResult
+                    AjaxResult ajaxResult = new AjaxResult(true, "保存成功");
                     db.Articles.Add(articles);
                     db.SaveChanges();
-                    return JsonConvert
+                    return Json(JsonConvert.SerializeObject(ajaxResult));
                 }
                 else
                 {
-                    return Content("已存在相同的文章");
+                    AjaxResult ajaxResult = new AjaxResult(false, "已有相同的文章");
+                    return Json(JsonConvert.SerializeObject(ajaxResult));
                 }
             }
-            return Content("保存失败");
+            else
+            {
+                AjaxResult ajaxResult = new AjaxResult(false, "保存失败");
+                return Json(JsonConvert.SerializeObject(ajaxResult));
+            }
         }
 
         private ArticleModel db = new ArticleModel();

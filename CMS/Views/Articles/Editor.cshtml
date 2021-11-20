@@ -66,8 +66,8 @@
                     timeout: 10000,
                     dataType: "json",
                     data: JSON.stringify(article),
-                    success: function () {
-                        alert("提交成功");
+                    success: function (data) {
+                        alert(JSON.parse(data).message);
                     },
                     error: function (error) {
                         console.log(error);
