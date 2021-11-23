@@ -35,7 +35,7 @@
             </div>
             <div class="modal-footer">
                 <button id="confirm" type="button" class="btn  btn-lg btn-primary">确定</button>
-                <button type="button" class="btn  btn-lg btn-default" data-dismiss="modal">取消</button>
+                <button id="closed" type="button" class="btn  btn-lg btn-default" data-dismiss="modal">取消</button>
             </div>
         </div>
     </div>
@@ -81,33 +81,38 @@
                 "Author": "无作者",
                 "Content": " ",
                 "Class": "无类别",
-                "Abstract": " ",
+                "Abstract": "无摘要",
             };
             var html = ue.getContent();
             var txt = ue.getContentTxt();
-            var plain = ue.getPlainTxt().split("\n", 2).filter(item => item != '');
-            article.Title = plain[0].substring(0, 199);
+            var plain = ue.getPlainTxt().split("\n").filter(item => item != '');
+            if (plain.length >= 2) {
+                article.Title = plain[0].substring(0, 199);
+                article.Abstract = plain[1].substring(0, 499);
+            }
+            
             article.Content = html;
-            article.Abstract = plain[1].substring(0, 499);
+           
 
             var el = $('<div></div>');
             el.html(html);
 
             $(":header", el).each(function () {
-                var title = this.innerHTML;
-                if (title != "") {
-                    article.Title = title;
+                var temp = this.innerHTML;
+                if (temp != "") {
+                    article.Title = temp;
                 }
                 return false;
             });
 
             data = JSON.stringify(article);
 
-            $("#title").html(article.Title);
+            $("#title").val(article.Title);
             $("#abstract").html(article.Abstract);
         })
 
         $("#confirm").click(function () {
+            console.log("clicked");
             $.ajax(
                 {
                     type: 'POST',
@@ -117,12 +122,15 @@
                     data: data,
                     success: function (data) {
                         alert(JSON.parse(data).message);
+                        $("#closed").trigger("click");
                     },
                     error: function (error) {
                         console.log(error);
                         alert("提交失败");
+                        $("#closed").trigger("click");
                     }
                 })
+            
         }
         )
     });

@@ -5,7 +5,9 @@ using System.Data.Entity;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Net.NetworkInformation;
 using System.Security.Cryptography;
+using System.Text;
 using System.Web;
 using System.Web.Mvc;
 using CMS.Models;
@@ -27,8 +29,34 @@ namespace CMS.Controllers
             this.res = res;
             this.message = message;
         }
-    }
 
+        public static bool PingSQLServer()
+        {
+            // 主机地址
+            string targetHost = "192.168.57.128";
+            string data = " ";
+
+            Ping pingSender = new Ping();
+            PingOptions options = new PingOptions
+            {
+                DontFragment = true
+            };
+
+            byte[] buffer = Encoding.ASCII.GetBytes(data);
+            int timeout = 1024;
+
+            PingReply reply = pingSender.Send(targetHost, timeout);
+
+            if (reply.Status == IPStatus.Success)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+    }
     public class ArticlesController : Controller
     {
         //跳转文章页
@@ -56,6 +84,11 @@ namespace CMS.Controllers
         [Route("Articles/Submit")]
         public ActionResult Submit()
         {
+            if (!AjaxResult.PingSQLServer())
+            {
+                AjaxResult ajaxResult = new AjaxResult(false, "无法连接到数据库");
+                return Json(JsonConvert.SerializeObject(ajaxResult));
+            }
             var sr = new StreamReader(Request.InputStream);
             var stream = sr.ReadToEnd();
             Articles articles = JsonConvert.DeserializeObject<Articles>(stream);
