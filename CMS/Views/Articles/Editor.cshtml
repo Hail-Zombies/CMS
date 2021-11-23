@@ -9,6 +9,11 @@
     <li class="active">编辑页</li>
 </ol>
 
+<div class="input-control has-label-left-lg" >
+    <input id="title"style="font-size:x-large" type="text" class="form-control" placeholder="">
+    <label for="title"style="font-size:x-large" class="input-control-label-left text-right">标题：</label>
+</div>
+
 <script id="editor" name="editor" type="text/plain">这里写你的初始化内容</script>
 
 <button id="sub" class="btn  btn-primary" type="button" style="margin: 5px 2px;float: right;">
@@ -53,10 +58,10 @@
             var html = ue.getContent();
             var txt = ue.getContentTxt();
             var article = {
-                "Title": "标题",
-                "Author": "作者",
+                "Title": "无标题",
+                "Author": "无作者",
                 "Content": html,
-                "Class": "科普",
+                "Class": "无类别",
                 "Abstract": txt.substring(0, 499)
             };
             var data = JSON.stringify(article);
