@@ -147,13 +147,13 @@ namespace CMS.Controllers
         [Route("Articles/GetArticle")]
         public ActionResult GetArticle()
         {
-            int id = Convert.ToInt32(Request.QueryString["id"]);
+            int id = Convert.ToInt32(Request.Params.Get("id"));
             Articles articles = db.Articles.Find(id);
             if (articles == null)
             {
                 return Content("文章好像丢失了。。。。。。");
             }
-            return Content(articles.Content);
+            return Json(JsonConvert.SerializeObject(articles));
         }
 
         // GET: Articles

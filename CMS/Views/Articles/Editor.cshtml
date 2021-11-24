@@ -9,37 +9,20 @@
     <li class="active">编辑页</li>
 </ol>
 
+<div class="input-control has-label-left-lg" style="margin-top:0px">
+    <input id="title" style="font-size:x-large" type="text" class="form-control" placeholder="">
+    <label for="title" style="font-size:x-large" class="input-control-label-left text-right">标题：</label>
+</div>
+@*<div class="input-control has-label-left-lg" style="margin:5px 0px">
+        <textarea id="abstract" style="font-size:large;padding-top:1px" type="text" class="form-control" placeholder="可不填"></textarea>
+        <label for="abstract" style="font-size:x-large" class="input-control-label-left text-right">摘要：</label>
+    </div>*@
+
 <script id="editor" name="editor" type="text/plain"></script>
 
-<button id="sub" class="btn btn-lg btn-primary" type="button" style="margin: 5px 2px;float: right;" data-moveable="true" data-toggle="modal" data-target="#popup">
+<button id="sub" class="btn btn-lg btn-primary" type="button" style="margin: 5px 2px;float: right;">
     <i class="icon icon-save"></i>&nbsp提交
 </button>
-
-<!-- 对话框HTML -->
-<div class="modal fade" id="popup">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">关闭</span></button>
-                <h1 class="modal-title">确认文章内容</h1>
-            </div>
-            <div class="modal-body">
-                <div class="input-control has-label-left-lg" style="margin-top:5px">
-                    <input id="title" style="font-size:x-large" type="text" class="form-control" placeholder="">
-                    <label for="title" style="font-size:x-large" class="input-control-label-left text-right">标题：</label>
-                </div>
-                <div class="input-control has-label-left-lg" style="margin-top:5px">
-                    <textarea id="abstract" style="font-size:large;height:150px" type="text" class="form-control" placeholder=""></textarea>
-                    <label for="abstract" style="font-size:x-large" class="input-control-label-left text-right">摘要：</label>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button id="confirm" type="button" class="btn  btn-lg btn-primary">确定</button>
-                <button id="closed" type="button" class="btn  btn-lg btn-default" data-dismiss="modal">取消</button>
-            </div>
-        </div>
-    </div>
-</div>
 
 @* <script type="text/javascript">
     var ue = UE.getEditor('editor');
@@ -76,27 +59,31 @@
     $(document).ready(function () {
         var data;
         $("#sub").click(function () {
+
             var article = {
-                "Title": "无标题",
-                "Author": "无作者",
-                "Content": " ",
-                "Class": "无类别",
-                "Abstract": "无摘要",
+                "Title": "",
+                "Author": "3000000",
+                "Content": "",
+                "Class": "栏目一",
+                "Abstract": "",
             };
-            var html = ue.getContent();
-            var txt = ue.getContentTxt();
+
+            article.Title = $("#title").val();
+            /*article.Abstract = $("#abstract").val();*/
+            article.Content = ue.getContent();
+
             var plain = ue.getPlainTxt().split("\n").filter(item => item != /\s/g);
             if (plain.length >= 2) {
                 var num = 0;
-                for (var i = num; i < plain.length; i++) {
-                    if (plain[i].replace(/\s/g, "") == "")
-                        continue;
-                    else {
-                        article.Title = plain[i].substring(0, 199);
-                        num = i + 1;
-                        break;
-                    }
-                }
+                //for (var i = num; i < plain.length; i++) {
+                //    if (plain[i].replace(/\s/g, "") == "")
+                //        continue;
+                //    else {
+                //        article.Title = plain[i].substring(0, 199);
+                //        num = i + 1;
+                //        break;
+                //    }
+                //}
                 for (var i = num; i < plain.length; i++) {
                     if (plain[i].replace(/\s/g, "") == "")
                         continue;
@@ -107,27 +94,24 @@
                 }
             }
 
-            article.Content = html;
-
-            var el = $('<div></div>');
-            el.html(html);
-
-            $(":header", el).each(function () {
-                var temp = this.innerHTML;
-                if (temp != "") {
-                    article.Title = temp;
-                }
-                return false;
-            });
+            if (article.Title.replace(/\s/g, "") == "") {
+                alert("请填写标题");
+                return;
+            }
+            if (article.Content == "") {
+                alert("请输入内容");
+                return;
+            }
+            if (article.Title.length > 200) {
+                alert("标题过长");
+                return;
+            }
+            if (article.Abstract.length > 500) {
+                alert("摘要过长");
+                return;
+            }
 
             data = JSON.stringify(article);
-
-            $("#title").val(article.Title);
-            $("#abstract").html(article.Abstract);
-        })
-
-        $("#confirm").click(function () {
-            console.log("clicked");
             $.ajax(
                 {
                     type: 'POST',
@@ -137,16 +121,12 @@
                     data: data,
                     success: function (data) {
                         alert(JSON.parse(data).message);
-                        $("#closed").trigger("click");
                     },
                     error: function (error) {
                         console.log(error);
                         alert("提交失败");
-                        $("#closed").trigger("click");
                     }
                 })
-
-        }
-        )
+        })
     });
 </script>
