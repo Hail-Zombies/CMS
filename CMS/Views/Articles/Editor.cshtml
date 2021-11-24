@@ -85,10 +85,26 @@
             };
             var html = ue.getContent();
             var txt = ue.getContentTxt();
-            var plain = ue.getPlainTxt().split("\n").filter(item => item != '');
+            var plain = ue.getPlainTxt().split("\n").filter(item => item != /\s/g);
             if (plain.length >= 2) {
-                article.Title = plain[0].substring(0, 199);
-                article.Abstract = plain[1].substring(0, 499);
+                var num = 0;
+                for (var i = num; i < plain.length; i++) {
+                    if (plain[i].replace(/\s/g, "") == "")
+                        continue;
+                    else {
+                        article.Title = plain[i].substring(0, 199);
+                        num = i + 1;
+                        break;
+                    }
+                }
+                for (var i = num; i < plain.length; i++) {
+                    if (plain[i].replace(/\s/g, "") == "")
+                        continue;
+                    else {
+                        article.Abstract = plain[i].substring(0, 499).replace(/\s/g, "");
+                        break;
+                    }
+                }
             }
 
             article.Content = html;
