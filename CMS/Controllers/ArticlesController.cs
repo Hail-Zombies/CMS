@@ -57,6 +57,7 @@ namespace CMS.Controllers
             }
         }
     }
+
     public class ArticlesController : Controller
     {
         //跳转文章页
@@ -105,15 +106,15 @@ namespace CMS.Controllers
                        orderby p.Id descending
                        select p;
 
-            if (articles != null)
+            if (articles.Content != "" && articles.Content != null)
             {
                 if (temp.Count() == 0)
                 {
                     AjaxResult ajaxResult = new AjaxResult(true, "保存成功");
-                    var add = db.Articles.Add(articles);
                     try
                     {
-                        var save = db.SaveChanges();
+                        db.Articles.Add(articles);
+                        db.SaveChanges();
                     }
                     catch (Exception e)
                     {

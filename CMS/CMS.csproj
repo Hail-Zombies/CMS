@@ -151,6 +151,7 @@
     <Compile Include="ueditor\net\App_Code\UploadHandler.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\SelectArticles.sql" />
     <Content Include="article.html" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\Site.css" />
@@ -160,7 +161,7 @@
     <Content Include="Global.asax" />
     <Content Include="head.html" />
     <Content Include="list.html" />
-    <Content Include="App_Data\dbo.Articles.sql" />
+    <Content Include="App_Data\Create.sql" />
     <Content Include="App_Data\InsertArticle.sql" />
     <Content Include="testeditor.html" />
     <Content Include="ueditor\dialogs\anchor\anchor.html" />

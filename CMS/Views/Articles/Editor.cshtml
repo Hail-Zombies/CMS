@@ -9,7 +9,7 @@
     <li class="active">编辑页</li>
 </ol>
 
-<script id="editor" name="editor" type="text/plain">这里写你的初始化内容</script>
+<script id="editor" name="editor" type="text/plain"></script>
 
 <button id="sub" class="btn btn-lg btn-primary" type="button" style="margin: 5px 2px;float: right;" data-moveable="true" data-toggle="modal" data-target="#popup">
     <i class="icon icon-save"></i>&nbsp提交
@@ -90,9 +90,8 @@
                 article.Title = plain[0].substring(0, 199);
                 article.Abstract = plain[1].substring(0, 499);
             }
-            
+
             article.Content = html;
-           
 
             var el = $('<div></div>');
             el.html(html);
@@ -130,7 +129,7 @@
                         $("#closed").trigger("click");
                     }
                 })
-            
+
         }
         )
     });
