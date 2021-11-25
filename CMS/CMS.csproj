@@ -26,7 +26,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <TypeScriptToolsVersion>4.2</TypeScriptToolsVersion>
+    <TypeScriptToolsVersion>Latest</TypeScriptToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -36,6 +36,19 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <TypeScriptTarget>ES5</TypeScriptTarget>
+    <TypeScriptJSXEmit>React</TypeScriptJSXEmit>
+    <TypeScriptModuleKind />
+    <TypeScriptCompileOnSaveEnabled>True</TypeScriptCompileOnSaveEnabled>
+    <TypeScriptNoImplicitAny>False</TypeScriptNoImplicitAny>
+    <TypeScriptRemoveComments>False</TypeScriptRemoveComments>
+    <TypeScriptOutFile />
+    <TypeScriptOutDir />
+    <TypeScriptGeneratesDeclarations>False</TypeScriptGeneratesDeclarations>
+    <TypeScriptNoEmitOnError>True</TypeScriptNoEmitOnError>
+    <TypeScriptSourceMap>True</TypeScriptSourceMap>
+    <TypeScriptMapRoot />
+    <TypeScriptSourceRoot />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -131,9 +144,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
-    <Compile Include="App_Start\DateTimeHelper.cs" />
+    <Compile Include="Controllers\DateTimeHelper.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AjaxResult.cs" />
     <Compile Include="Controllers\ArticlesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -155,6 +169,7 @@
     <Content Include="App_Data\SelectArticles.sql" />
     <Content Include="article.html" />
     <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\Index.js" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\Ueditor.css" />
     <Content Include="editor.html" />
@@ -329,6 +344,7 @@
     <Content Include="ueditor\lang\zh-cn\zh-cn.js" />
     <Content Include="ueditor\net\net.sln" />
     <Content Include="ueditor\net\upload\image\20211111\Background9426588.png" />
+    <Content Include="ueditor\net\upload\image\20211123\slide14572732.jpg" />
     <Content Include="ueditor\themes\default\css\ueditor.css" />
     <Content Include="ueditor\themes\default\css\ueditor.min.css" />
     <Content Include="ueditor\themes\default\dialogbase.css" />
@@ -521,6 +537,23 @@
     <Content Include="zui\lib\jquery\jquery-migrate-3.1.0.js" />
     <Content Include="zui\lib\jquery\jquery-migrate-3.1.0.min.js" />
     <Content Include="zui\lib\jquery\jquery.js" />
+    <Content Include="zui\lib\kindeditor\kindeditor.css" />
+    <Content Include="zui\lib\kindeditor\kindeditor.js" />
+    <Content Include="zui\lib\kindeditor\kindeditor.min.css" />
+    <Content Include="zui\lib\kindeditor\kindeditor.min.js" />
+    <Content Include="zui\lib\kindeditor\lang\ar.js" />
+    <Content Include="zui\lib\kindeditor\lang\en.js" />
+    <Content Include="zui\lib\kindeditor\lang\fr.js" />
+    <Content Include="zui\lib\kindeditor\lang\ja.js" />
+    <Content Include="zui\lib\kindeditor\lang\zh_CN.js" />
+    <Content Include="zui\lib\kindeditor\lang\zh_TW.js" />
+    <Content Include="zui\lib\kindeditor\themes\common\anchor.gif" />
+    <Content Include="zui\lib\kindeditor\themes\common\audio.png" />
+    <Content Include="zui\lib\kindeditor\themes\common\blank.gif" />
+    <Content Include="zui\lib\kindeditor\themes\common\loading.gif" />
+    <Content Include="zui\lib\kindeditor\themes\common\media.png" />
+    <Content Include="zui\lib\kindeditor\themes\common\video.png" />
+    <Content Include="zui\lib\kindeditor\themes\default\default.png" />
     <Content Include="zui\lib\markdoc\zui.markdoc.js" />
     <Content Include="zui\lib\markdoc\zui.markdoc.min.js" />
     <Content Include="zui\lib\migrate1.2\zui.migrate1.2.js" />
@@ -749,6 +782,8 @@
     <Content Include="Views\Articles\Edit.cshtml" />
     <Content Include="Views\Articles\Index.cshtml" />
     <Content Include="Views\Home\Home.cshtml" />
+    <Content Include="zui\lib\kindeditor\plugins.zip" />
+    <Content Include="zui\lib\kindeditor\README.md" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

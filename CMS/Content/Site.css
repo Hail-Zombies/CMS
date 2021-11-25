@@ -132,6 +132,11 @@ div.ratio img {
         white-space: nowrap;
     }
 
+    .carousel-news .item img {
+        width: 100%;
+        height: auto;
+    }
+
 .carousel-news .carousel-caption {
     display: block;
     position: absolute;

@@ -36,4 +36,18 @@ namespace CMS.Models
         [MaxLength(32)]
         public byte[] Content_HASH { get; set; }
     }
+
+    public partial class Navigation
+    {
+        public int Id { get; set; }
+        public string Title { get; set; }
+
+        public DateTime? Update_time { get; set; }
+
+        public string Class { get; set; }
+
+        public string Img { get; set; }
+
+        public string Abstract { get; set; }
+    }
 }
