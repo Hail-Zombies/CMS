@@ -156,6 +156,11 @@ namespace CMS.Controllers
             return Json(JsonConvert.SerializeObject(articles));
         }
 
+        public ActionResult List()
+        {
+            return null;
+        }
+
         // GET: Articles
         public ActionResult Index()
         {

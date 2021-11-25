@@ -9,7 +9,7 @@
     <li class="active">编辑页</li>
 </ol>
 
-<div class="input-control has-label-left-lg" style="margin-top:0px">
+<div class="input-control has-label-left-lg" style="margin-bottom:3px">
     <input id="title" style="font-size:x-large" type="text" class="form-control" placeholder="">
     <label for="title" style="font-size:x-large" class="input-control-label-left text-right">标题：</label>
 </div>
@@ -65,12 +65,20 @@
                 "Author": "3000000",
                 "Content": "",
                 "Class": "栏目一",
+                "Img": "",
                 "Abstract": "",
             };
 
             article.Title = $("#title").val();
-            /*article.Abstract = $("#abstract").val();*/
             article.Content = ue.getContent();
+
+            var el = $('<div></div>');
+            el.html(article.Content);
+
+            $.each(el.find("img"), function (v, i) {
+                article.Img = i.src;
+                return;
+            });
 
             var plain = ue.getPlainTxt().split("\n").filter(item => item != /\s/g);
             if (plain.length >= 2) {
@@ -93,6 +101,10 @@
                     }
                 }
             }
+
+            //if ($("#abstract").val() != "") {
+            //    article.Abstract = $("#abstract").val();
+            //}
 
             if (article.Title.replace(/\s/g, "") == "") {
                 alert("请填写标题");

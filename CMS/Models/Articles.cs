@@ -23,6 +23,9 @@ namespace CMS.Models
         [StringLength(50)]
         public string Class { get; set; }
 
+        [StringLength(500)]
+        public string Img { get; set; }
+
         [Required]
         public string Content { get; set; }
 
