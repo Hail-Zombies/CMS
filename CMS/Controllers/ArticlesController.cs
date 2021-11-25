@@ -65,6 +65,12 @@ namespace CMS.Controllers
         [Route("Articles/Article")]
         public ActionResult Article()
         {
+            var id = Request.Params.Get("id");
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            ViewBag.Id = id;
             return View();
         }
 
@@ -147,7 +153,7 @@ namespace CMS.Controllers
         [Route("Articles/GetArticle")]
         public ActionResult GetArticle()
         {
-            int id = Convert.ToInt32(Request.Params.Get("id"));
+            var id = Convert.ToInt32(Request.Params.Get("id"));
             Articles articles = db.Articles.Find(id);
             if (articles == null)
             {

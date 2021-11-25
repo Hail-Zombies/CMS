@@ -124,21 +124,20 @@
             }
 
             data = JSON.stringify(article);
-            $.ajax(
-                {
-                    type: 'POST',
-                    url: 'Submit',
-                    contentType: "application/json",
-                    dataType: "json",
-                    data: data,
-                    success: function (data) {
-                        alert(JSON.parse(data).message);
-                    },
-                    error: function (error) {
-                        console.log(error);
-                        alert("提交失败");
-                    }
-                })
+            $.ajax({
+                type: 'POST',
+                url: 'Submit',
+                contentType: "application/json",
+                dataType: "json",
+                data: data,
+                success: function (data) {
+                    alert(JSON.parse(data).message);
+                },
+                error: function (error) {
+                    console.log(error);
+                    alert("提交失败");
+                }
+            })
         })
     });
 </script>

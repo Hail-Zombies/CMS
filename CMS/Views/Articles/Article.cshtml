@@ -1,5 +1,5 @@
 ﻿@{
-    ViewBag.Title = "HTML5";
+    ViewBag.Title = "文章页";
 }
 
 <ol class="breadcrumb">
@@ -14,14 +14,17 @@
 
         <dl class="dl-inline">
             <dt>作者：</dt>
-            <dd id="author"></dd>
+            <dd id="author">
+            </dd>
             <dt>最后修订：</dt>
-            <dd id="update_time"></dd>
-            <dd style="float:right" id="class"></dd>
+            <dd id="update_time">
+            </dd>
+            <dd style="float:right" id="class">
+            </dd>
             <dt style="float:right">栏目：</dt>
         </dl>
-        <div id="abstract" class="abstract">
-        </div>
+        @*<div id="abstract" class="abstract">
+            </div>*@
     </header>
 
     <section id="content" class="content">
@@ -48,7 +51,9 @@
         return date[0] + "年" + date[1] + "月" + date[2] + "日（" + week + "）"
             + time[0] + ":" + time[1];
     }
+
     $(document).ready(function () {
+        var id = '@ViewBag.Id';
         var article = {
             "Title": "",
             "Author": "",
@@ -61,7 +66,7 @@
             {
                 type: 'post',
                 url: 'GetArticle',
-                data: { "id": 1 },
+                data: { "id": id },
                 success: function (data) {
                     article = JSON.parse(data);
                     $("#title").html(article.Title);
