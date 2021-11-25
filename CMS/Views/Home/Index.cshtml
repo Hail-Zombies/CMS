@@ -29,12 +29,18 @@
             <ol class="carousel-indicators">
                 <li data-target="#carousel_news" data-slide-to="0" class="active"></li>
                 <li data-target="#carousel_news" data-slide-to="1"></li>
+                <li data-target="#carousel_news" data-slide-to="2"></li>
             </ol>
             <div class="carousel-inner">
                 <div class="item active">
                     <img src="~/image/6e920e010dfcbecfb625baa3690d75ba.jpeg" alt="...">
                     <div class="carousel-caption"></div>
                     <a href="/Article?id=1">HTML5</a>
+                </div>
+                <div class="item">
+                    <img src="~/image/400a6e57f796.jpeg" alt="...">
+                    <div class="carousel-caption"></div>
+                    <a href="#">杨洁篪会见美国民主、共和两党代表</a>
                 </div>
                 <div class="item">
                     <img src="~/image/400a6e57f796.jpeg" alt="...">
@@ -1015,8 +1021,14 @@
     });
 
     $(document).ready(function () {
+        var article = {
+            "Title": "",
+            "Update_time": "",
+            "Class": "新闻",
+        };
         $.ajax({
-
+            success: function () {
+            }
         })
-    }
+    })
 </script>

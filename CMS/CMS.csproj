@@ -131,9 +131,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
-    <Compile Include="App_Start\DateTimeHelper.cs" />
+    <Compile Include="Controllers\DateTimeHelper.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AjaxResult.cs" />
     <Compile Include="Controllers\ArticlesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -155,6 +156,7 @@
     <Content Include="App_Data\SelectArticles.sql" />
     <Content Include="article.html" />
     <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\Index.js" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\Ueditor.css" />
     <Content Include="editor.html" />
@@ -329,6 +331,7 @@
     <Content Include="ueditor\lang\zh-cn\zh-cn.js" />
     <Content Include="ueditor\net\net.sln" />
     <Content Include="ueditor\net\upload\image\20211111\Background9426588.png" />
+    <Content Include="ueditor\net\upload\image\20211123\slide14572732.jpg" />
     <Content Include="ueditor\themes\default\css\ueditor.css" />
     <Content Include="ueditor\themes\default\css\ueditor.min.css" />
     <Content Include="ueditor\themes\default\dialogbase.css" />

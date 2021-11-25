@@ -5,9 +5,7 @@ using System.Data.Entity;
 using System.IO;
 using System.Linq;
 using System.Net;
-using System.Net.NetworkInformation;
 using System.Security.Cryptography;
-using System.Text;
 using System.Web;
 using System.Web.Mvc;
 using CMS.Models;
@@ -15,51 +13,10 @@ using Newtonsoft.Json;
 
 namespace CMS.Controllers
 {
-    public class AjaxResult
-    {
-        public bool res;
-        public string message;
-
-        public AjaxResult()
-        {
-        }
-
-        public AjaxResult(bool res, string message)
-        {
-            this.res = res;
-            this.message = message;
-        }
-
-        public static bool PingSQLServer()
-        {
-            // 主机地址
-            string targetHost = "192.168.57.128";
-            string data = " ";
-
-            Ping pingSender = new Ping();
-            PingOptions options = new PingOptions
-            {
-                DontFragment = true
-            };
-
-            byte[] buffer = Encoding.ASCII.GetBytes(data);
-            int timeout = 1024;
-
-            PingReply reply = pingSender.Send(targetHost, timeout);
-
-            if (reply.Status == IPStatus.Success)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-    }
-
     public class ArticlesController : Controller
     {
+        private ArticleModel db = new ArticleModel();
+
         //跳转文章页
         [Route("Article")]
         [Route("Articles/Article")]
@@ -142,8 +99,6 @@ namespace CMS.Controllers
                 return Json(JsonConvert.SerializeObject(ajaxResult));
             }
         }
-
-        private ArticleModel db = new ArticleModel();
 
         /// <summary>
         /// 获取文章内容

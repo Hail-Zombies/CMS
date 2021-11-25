@@ -2,6 +2,7 @@
     ViewBag.Title = "首页";
 }
 @Scripts.Render("~/bundles/zui/lib")
+<script src="~/Content/Index.js"></script>
 <style type="text/css">
     tr {
         background: rgb(255 255 255)
@@ -26,31 +27,6 @@
 <div class="row">
     <div class="col-xs-8">
         <div id="carousel_news" class="carousel slide carousel-news" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#carousel_news" data-slide-to="0" class="active"></li>
-                <li data-target="#carousel_news" data-slide-to="1"></li>
-            </ol>
-            <div class="carousel-inner">
-                <div class="item active">
-                    <img src="~/image/6e920e010dfcbecfb625baa3690d75ba.jpeg" alt="...">
-                    <div class="carousel-caption"></div>
-                    <a href="/Article?id=1">HTML5</a>
-                </div>
-                <div class="item">
-                    <img src="~/image/400a6e57f796.jpeg" alt="...">
-                    <div class="carousel-caption"></div>
-                    <a href="#">杨洁篪会见美国民主、共和两党代表</a>
-                </div>
-            </div>
-            <!-- 轮播（Carousel）导航 -->
-            <a class="left carousel-control" href="#carousel_news" role="button" data-slide="prev">
-                <span class="icon icon-chevron-left" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="right carousel-control" href="#carousel_news" role="button" data-slide="next">
-                <span class="icon icon-chevron-right" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
         </div>
     </div>
     <div class="col-xs-4">
@@ -968,55 +944,25 @@
 <!-- 内容结束 -->
 
 <script type="text/javascript">
-    var data = {
-        labels: ["一月", "二月", "三月", "四月", "五月", "六月", "七月"],
-        datasets: [{
-            label: "蓝队",
-            color: 'blue',
-            data: [65, 59, 80, 81, 56, 55, 40]
-        }, {
-            label: "绿队",
-            color: 'green',
-            data: [28, 48, 40, 19, 86, 27, 90]
-        }]
-    };
-
-    var options = {
-        responsive: true
-    }; // 图表配置项，可以留空来使用默认的配置
-    var myBarChart = $('#myBarChart').barChart(data, options);
-
-    var id = 1;
-    $(function () {
-        $("#carousel_tabs").carousel('pause');
-        $("#nav_tabs>li").hover(
-            function () {
-                $(".slide-" + String(id)).removeClass("active");
-                id = Number($(this).attr("class").split("-")[1]);
-                //console.log(id);
-                $("#carousel_tabs").carousel(id - 1);
-                $(this).addClass("active");
-                $("#carousel_tabs").carousel('pause');
-            },
-            function () {
-                $("#carousel_tabs").carousel('cycle');
-            }
-        );
-        // 获取轮播索引
-        $('#carousel_tabs').on('slide.zui.carousel', function (event) {
-            var $hoder = $('#carousel_tabs').find('.item'),
-                $items = $(event.relatedTarget);
-            //getIndex就是轮播到当前位置的索引
-            var getIndex = $hoder.index($items);
-            $(".slide-" + String(id)).removeClass("active");
-            id = getIndex + 1;
-            $(".slide-" + String(id)).addClass("active");
-        });
-    });
-
     $(document).ready(function () {
+        Home_Load();
+        var article = {
+            "Title": "",
+            "Update_time": "",
+            "Class": "新闻",
+            "Update_time": "",
+        };
         $.ajax({
-
+            type: 'POST',
+            url: 'Get_carousel_news',
+            success: function (data) {
+                Creat_carousel_news(JSON.parse(data));
+            },
+            error: function (error) {
+                console.log(error);
+                alert("提交失败");
+            }
         })
-    }
+
+    })
 </script>
