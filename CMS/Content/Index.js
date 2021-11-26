@@ -19,7 +19,7 @@
 
     var id = 1;
     $(function () {
-        $("#carousel_tabs").carousel('pause');
+        $("#carousel_tabs").carousel('cycle');
         $("#nav_tabs>li").hover(
             function () {
                 $(".slide-" + String(id)).removeClass("active");
@@ -47,71 +47,43 @@
 }
 
 function Creat_carousel_news(data) {
-    var rootdiv = $("#carousel_news");
-    var ol, item, a;
+    var item = $("#carousel_news>div.carousel-inner");
     if (data.length > 1) {
-        ol = $(`
-            <ol class="carousel-indicators">
-            </ol>`);
-        ol.append(`<li data-target="#carousel_news" data-slide-to="0" class="active"></li>`);
-        item = $(`
-            <div class="carousel-inner">
-            </div>`);
         item.append(`
                 <div class="item active">
                     <img src="`+ data[0].Img + `" alt="...">
                     <div class="carousel-caption"></div>
-                    <a href="/Article?id=`+ data[0].Id + `">` + data[0].Title + `</a>
-                </div>
-                <div class="item">
-                    <img src="`+ data[1].Img + `" alt="...">
-                    <div class="carousel-caption"></div>
-                    <a href="/Article?id=`+ data[1].Id + `">` + data[1].Title + `</a>
-                </div>
-                <div class="item">
-                    <img src="`+ data[0].Img + `" alt="...">
-                    <div class="carousel-caption"></div>
-                    <a href="/Article?id=`+ data[2].Id + `">` + data[2].Title + `</a>
-                </div>
-                <div class="item">
-                    <img src="`+ data[1].Img + `" alt="...">
-                    <div class="carousel-caption"></div>
-                    <a href="/Article?id=`+ data[3].Id + `">` + data[3].Title + `</a>
-                </div>
-            </div>`);
-        a = $(`
-            <a class="left carousel-control" href="#carousel_news" role="button" data-slide="prev">
-                <span class="icon icon-chevron-left" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="right carousel-control" href="#carousel_news" role="button" data-slide="next">
-                <span class="icon icon-chevron-right" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>`);
+                    <a href="/Article?id=`+ data[0].Id + `" target="_blank">` + data[0].Title + `</a>
+                </div>`);
         for (var i = 1; i < data.length; i++) {
-            ol.append(`<li data-target="#carousel_news" data-slide-to="` + i + `"></li>`);
             item.append(`
                 <div class="item">
                     <img src="`+ data[i % 2].Img + `" alt="...">
                     <div class="carousel-caption"></div>
-                    <a href="/Article?id=`+ data[i].Id + `">` + data[i].Title + `</a>
+                    <a href="/Article?id=`+ data[i].Id + `"  target="_blank">` + data[i].Title + `</a>
                 </div>`
             );
         }
     }
-
-    rootdiv.append(ol, item, a);
-
     $("#carousel_news img").each(function () {
         var ratio = 0.5625;  // 缩放比例
         var width = $("#carousel_news .carousel-inner").width();    // 图片实际宽度
         var height = width * ratio;    // 计算等比例缩放后的高度
         $(this).css("height", height);  // 设定等比例缩放后的高度
     })
+}
 
-    var js = $(`
-    <link href="/zui/css/zui.css" rel="stylesheet"/>
-<script src="/Scripts/jquery-3.6.0.js"></script>
-    <script src="/zui/js/zui.min.js"></script>`);
-    $("#carousel_news").append(js);
+function parseDate(update_time) {
+    var list = update_time.split("T");
+    var date = list[0].split("-");
+    return `[` + date[1] + `-` + date[2] + `]`;
+}
+function Create_news(rootdiv, data) {
+    for (var i = 0; i < data.length; i++) {
+        rootdiv.append(`
+        <li>
+            <a href="/Article?id=`+ data[i].Id + `">` + data[i].Title + `</a>
+            <p>`+ parseDate(data[i].Update_time) + `</p>
+        </li>`);
+    }
 }
