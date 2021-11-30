@@ -1,20 +1,23 @@
 ﻿@{
     ViewBag.Title = "文章列表";
 }
+
+<script src="~/Content/Index.js"></script>
+
 @section tree_menu
 {
     <div class="container-fluid">
         <nav class="menu" data-ride="menu" style="padding-left: 25%;font-size:large">
             <ul id="treeMenu" class="tree tree-menu" data-ride="tree">
                 <li>
-                <a href="#"><i class="icon icon-list-ul"></i>单位一</a>
-                <ul>
-                    <li><a href="#">部门一</a></li>
-                    <li><a href="#">部门一</a></li>
-                    <li><a href="#">部门一</a></li>
-                    <li><a href="#">部门一</a></li>
-                    <li><a href="#">部门一</a></li>
-                </ul>
+                    <a href="#"><i class="icon icon-list-ul"></i>单位一</a>
+                    <ul>
+                        <li><a href="#">部门一</a></li>
+                        <li><a href="#">部门一</a></li>
+                        <li><a href="#">部门一</a></li>
+                        <li><a href="#">部门一</a></li>
+                        <li><a href="#">部门一</a></li>
+                    </ul>
                 </li>
                 <li><a href="#"><i class="icon icon-list-ol"></i>部门</a></li>
                 <li><a href="#"><i class="icon icon-list-ul"></i>部门</a></li>
@@ -22,34 +25,34 @@
                 <li><a href="#"><i class="icon icon-list-ul"></i>部门</a></li>
             </ul>
             @*<ul id="treeMenu" class="tree tree-menu" data-ride="tree">
-                <li><a href="#"><i class="icon icon-th"></i>首页</a></li>
-                <li><a href="#"><i class="icon icon-user"></i>个人资料</a></li>
-                <li>
-                    <a href="#"><i class="icon icon-time"></i>更新时间</a>
-                    <ul>
-                        <li><a href="#">今天</a></li>
-                        <li><a href="#">明天</a></li>
-                        <li><a href="#">昨天</a></li>
-                        <li><a href="#">本周</a></li>
-                    </ul>
-                </li>
-                <li><a href="#"><i class="icon icon-trash"></i>垃圾篓</a></li>
-                <li><a href="#"><i class="icon icon-link"></i>全部</a></li>
-                <li class="open">
-                    <a href="#"><i class="icon icon-tasks"></i>状态</a>
-                    <ul>
-                        <li>
-                            <a href="#"><i class="icon icon-circle-blank"></i>已就绪</a>
-                            <ul>
-                                <li><a href="#">已取消</a></li>
-                                <li><a href="#">已关闭</a></li>
-                            </ul>
-                        </li>
-                        <li class="active"><a href="#"><i class="icon icon-play-sign"></i>进行中</a></li>
-                        <li><a href="#"><i class="icon icon-ok-sign"></i>已完成</a></li>
-                    </ul>
-                </li>
-            </ul>*@
+                    <li><a href="#"><i class="icon icon-th"></i>首页</a></li>
+                    <li><a href="#"><i class="icon icon-user"></i>个人资料</a></li>
+                    <li>
+                        <a href="#"><i class="icon icon-time"></i>更新时间</a>
+                        <ul>
+                            <li><a href="#">今天</a></li>
+                            <li><a href="#">明天</a></li>
+                            <li><a href="#">昨天</a></li>
+                            <li><a href="#">本周</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#"><i class="icon icon-trash"></i>垃圾篓</a></li>
+                    <li><a href="#"><i class="icon icon-link"></i>全部</a></li>
+                    <li class="open">
+                        <a href="#"><i class="icon icon-tasks"></i>状态</a>
+                        <ul>
+                            <li>
+                                <a href="#"><i class="icon icon-circle-blank"></i>已就绪</a>
+                                <ul>
+                                    <li><a href="#">已取消</a></li>
+                                    <li><a href="#">已关闭</a></li>
+                                </ul>
+                            </li>
+                            <li class="active"><a href="#"><i class="icon icon-play-sign"></i>进行中</a></li>
+                            <li><a href="#"><i class="icon icon-ok-sign"></i>已完成</a></li>
+                        </ul>
+                    </li>
+                </ul>*@
         </nav>
     </div>
 }
@@ -100,57 +103,6 @@
     <div class="col-xs-8">
         <div class="container">
             <div class="items">
-                <div class="item">
-                    <div class="item-heading">
-                        <div class="pull-right label label-success">要讯</div>
-                        <h4><a href="###">HTML5 发展历史</a></h4>
-                    </div>
-                    <div class="item-content">
-                        <div class="media pull-left"><img src="~/image/400a6e57f796.jpeg" alt=""></div>
-                        <div class="text">
-                            HTML 5草案的前身名为Web Applications
-                            1.0，是在2004年由WHATWG提出。2008年1月22日，第一份正式草案发布。WHATWG表示该规范是目前仍在进行的工作，仍须多年的努力。[8]目前Mozilla
-                            Firefox、Google Chrome、Opera、Safari（版本4以上）、Internet Explorer（版本9以上）已支持HTML5技术。
-                        </div>
-                    </div>
-                    <div class="item-footer">
-                        <a href="#" class="text-muted"><i class="icon-comments"></i> 243</a> &nbsp; <span class="text-muted">2013-11-11 16:14:37</span>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="item-heading">
-                        <div class="pull-right label label-success">要讯</div>
-                        <h4><a href="###">HTML5 发展历史</a></h4>
-                    </div>
-                    <div class="item-content">
-                        <div class="media pull-right"><img src="~/image/400a6e57f796.jpeg" alt=""></div>
-                        <div class="text">
-                            HTML 5草案的前身名为Web Applications
-                            1.0，是在2004年由WHATWG提出。2008年1月22日，第一份正式草案发布。WHATWG表示该规范是目前仍在进行的工作，仍须多年的努力。[8]目前Mozilla
-                            Firefox、Google Chrome、Opera、Safari（版本4以上）、Internet Explorer（版本9以上）已支持HTML5技术。
-                        </div>
-                    </div>
-                    <div class="item-footer">
-                        <a href="#" class="text-muted"><i class="icon-comments"></i> 243</a> &nbsp; <span class="text-muted">2013-11-11 16:14:37</span>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="item-heading">
-                        <div class="pull-right label label-success">要讯</div>
-                        <h4><a href="###">HTML5 发展历史</a></h4>
-                    </div>
-                    <div class="item-content">
-                        <div class="media"><img src="~/image/400a6e57f796.jpeg" alt=""></div>
-                        <div class="text">
-                            HTML 5草案的前身名为Web Applications
-                            1.0，是在2004年由WHATWG提出。2008年1月22日，第一份正式草案发布。WHATWG表示该规范是目前仍在进行的工作，仍须多年的努力。[8]目前Mozilla
-                            Firefox、Google Chrome、Opera、Safari（版本4以上）、Internet Explorer（版本9以上）已支持HTML5技术。
-                        </div>
-                    </div>
-                    <div class="item-footer">
-                        <a href="#" class="text-muted"><i class="icon-comments"></i> 243</a> &nbsp; <span class="text-muted">2013-11-11 16:14:37</span>
-                    </div>
-                </div>
             </div>
             <footer>
                 <ul class="pager">
@@ -284,4 +236,18 @@
         $('#treeMenu li.active').removeClass('active');
         $(this).closest('li').addClass('active');
     });
+
+    $(document).ready(function () {
+        $.ajax({
+            type: 'POST',
+            url: 'Get_all',
+            success: function (data) {
+                Create_list($("div.items"), JSON.parse(data));
+            },
+            error: function (error) {
+                console.log(error);
+                alert("提交失败");
+            }
+        })
+    })
 </script>

@@ -19,23 +19,23 @@
 
     var id = 1;
     $(function () {
-        $("#carousel_tabs").carousel('cycle');
+        $("#carousel_tabs>div").carousel('cycle');
         $("#nav_tabs>li").hover(
             function () {
                 $(".slide-" + String(id)).removeClass("active");
                 id = Number($(this).attr("class").split("-")[1]);
                 //console.log(id);
-                $("#carousel_tabs").carousel(id - 1);
+                $("#carousel_tabs>div").carousel(id - 1);
                 $(this).addClass("active");
-                $("#carousel_tabs").carousel('pause');
+                $("#carousel_tabs>div").carousel('pause');
             },
             function () {
-                $("#carousel_tabs").carousel('cycle');
+                $("#carousel_tabs>div").carousel('cycle');
             }
         );
         // 获取轮播索引
-        $('#carousel_tabs').on('slide.zui.carousel', function (event) {
-            var $hoder = $('#carousel_tabs').find('.item'),
+        $('#carousel_tabs>div').on('slide.zui.carousel', function (event) {
+            var $hoder = $('#carousel_tabs>div').find('.item'),
                 $items = $(event.relatedTarget);
             //getIndex就是轮播到当前位置的索引
             var getIndex = $hoder.index($items);
@@ -44,6 +44,24 @@
             $(".slide-" + String(id)).addClass("active");
         });
     });
+}
+
+//转换时间格式
+function parseDateTime(update_time) {
+    var list = update_time.split("T");
+    var date = list[0].split("-");
+    var time = list[1].split(":");
+    var day = new Date(Date.parse(date[1] + "/" + date[2] + "/" + date[0]));
+    var today = new Array('星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六');
+    var week = today[day.getDay()];
+    return date[0] + "年" + date[1] + "月" + date[2] + "日（" + week + "）"
+        + time[0] + ":" + time[1];
+}
+
+function parseDate(update_time) {
+    var list = update_time.split("T");
+    var date = list[0].split("-");
+    return `[` + date[1] + `-` + date[2] + `]`;
 }
 
 function Creat_carousel_news(data) {
@@ -58,7 +76,7 @@ function Creat_carousel_news(data) {
         for (var i = 1; i < data.length; i++) {
             item.append(`
                 <div class="item">
-                    <img src="`+ data[i % 2].Img + `" alt="...">
+                    <img src="`+ data[i].Img + `" alt="...">
                     <div class="carousel-caption"></div>
                     <a href="/Article?id=`+ data[i].Id + `"  target="_blank">` + data[i].Title + `</a>
                 </div>`
@@ -73,11 +91,6 @@ function Creat_carousel_news(data) {
     })
 }
 
-function parseDate(update_time) {
-    var list = update_time.split("T");
-    var date = list[0].split("-");
-    return `[` + date[1] + `-` + date[2] + `]`;
-}
 function Create_news(rootdiv, data) {
     for (var i = 0; i < data.length; i++) {
         rootdiv.append(`
@@ -85,5 +98,20 @@ function Create_news(rootdiv, data) {
             <a href="/Article?id=`+ data[i].Id + `">` + data[i].Title + `</a>
             <p>`+ parseDate(data[i].Update_time) + `</p>
         </li>`);
+    }
+}
+
+function Create_list(rootdiv, data) {
+    for (var i = 0; i < data.length; i++) {
+        rootdiv.append(`
+    <div class="item">
+        <div class="item-heading">
+            <div class="pull-right"><span class="text-muted">`+ parseDateTime(data[i].Update_time) + `</span> &nbsp;</div>
+            <h4><a href="/Article?id=`+ data[i].Id + `"  target="_blank">` + data[i].Title + `</a></h4>
+        </div>
+        <div class="item-content">
+            <div class="text">`+ data[i].Abstract + `</div>
+        </div>
+    </div>`);
     }
 }

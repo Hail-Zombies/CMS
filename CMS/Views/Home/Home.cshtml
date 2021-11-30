@@ -1,6 +1,7 @@
 ﻿@{
     ViewBag.Title = "首页";
     ViewBag.Carousel_news = 5;
+    ViewBag.News_1 = "news";
 }
 @Scripts.Render("~/bundles/zui/lib")
 <script src="~/Content/Index.js"></script>
@@ -52,7 +53,7 @@
             <div id="news_1" class="department" style="margin-bottom: 1rem;">
                 <div class="detitle">
                     <span>要讯</span>
-                    <a class="more" href="List">更多 +</a>
+                    <a class="more" href="List?Class=@ViewBag.News_1">更多 +</a>
                 </div>
                 <div class="container news">
                     <ul>
@@ -79,14 +80,14 @@
         <div class="row container-fluid">
             <h1 style="display: block;border-bottom: 2px solid rgba(201, 21, 21, 0.589);">基层动态</h1>
         </div>
-        <div class="container-fluid">
+        <div id="carousel_tabs" class="container-fluid">
             <ul id="nav_tabs" class="nav nav-secondary nav-justified">
                 <li class="slide-1 active"><a>单位一</a></li>
                 <li class="slide-2"><a>单位二</a></li>
                 <li class="slide-3"><a>单位三</a></li>
             </ul>
 
-            <div id="carousel_tabs" class="carousel slide carousel-tabs">
+            <div class="carousel slide carousel-tabs">
                 <!-- <div class="carousel  carousel-tabs"> -->
                 <!-- 轮播项目 -->
                 <div class="carousel-inner">
@@ -127,51 +128,13 @@
 
                             <div class="col-xs-6">
                                 <div class="ratio-img">
-                                    <div class="department">
+                                    <div id="news_3" class="department">
                                         <div class="detitle">
                                             <span>单位一</span>
                                             <a class="more" href="List">更多 +</a>
                                         </div>
                                         <div class="container news">
                                             <ul>
-                                                <li>
-                                                    <a href="Article"
-                                                       style="font-size: 30px;color: red;max-width: 100%;">
-                                                        HTML5
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">国务院安委会对两起重大道路交通事故查处挂牌督办</a>
-                                                    <p>[09-14]</p>
-                                                </li>
-                                                <li>
-                                                    <a href="#">最高检：公益诉讼全面开展4年提起诉讼近2万件</a>
-                                                    <p>[09-14]</p>
-                                                </li>
-                                                <li>
-                                                    <a href="#">5年收案逾2000万件 中国发文夯实法庭之“基”</a>
-                                                    <p>[09-14]</p>
-                                                </li>
-                                                <li>
-                                                    <a href="#" style="font-size: 30px;color: red;max-width: 100%;">
-                                                        中国多个大学校长寄语
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">
-                                                        中国多个大学校长寄语：做“先锋”不做“看客”
-                                                        成“梦想派”更成“行动派”
-                                                    </a>
-                                                    <p>[09-14]</p>
-                                                </li>
-                                                <li>
-                                                    <a href="#">国务院安委会对两起重大道路交通事故查处挂牌督办</a>
-                                                    <p>[09-14]</p>
-                                                </li>
-                                                <li>
-                                                    <a href="#">最高检：公益诉讼全面开展4年提起诉讼近2万件</a>
-                                                    <p>[09-14]</p>
-                                                </li>
                                             </ul>
                                         </div>
                                     </div>
@@ -225,43 +188,6 @@
                                         </div>
                                         <div class="container news">
                                             <ul>
-                                                <li>
-                                                    <a href="#" style="font-size: 30px;color: red;max-width: 100%;">
-                                                        做“先锋”不做“看客”成“梦想派”更成“行动派”
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">国务院安委会对两起重大道路交通事故查处挂牌督办</a>
-                                                    <p>[09-14]</p>
-                                                </li>
-                                                <li>
-                                                    <a href="#">最高检：公益诉讼全面开展4年提起诉讼近2万件</a>
-                                                    <p>[09-14]</p>
-                                                </li>
-                                                <li>
-                                                    <a href="#">5年收案逾2000万件 中国发文夯实法庭之“基”</a>
-                                                    <p>[09-14]</p>
-                                                </li>
-                                                <li>
-                                                    <a href="#" style="font-size: 30px;color: red;max-width: 100%;">
-                                                        中国多个大学校长寄语
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">
-                                                        中国多个大学校长寄语：做“先锋”不做“看客”
-                                                        成“梦想派”更成“行动派”
-                                                    </a>
-                                                    <p>[09-14]</p>
-                                                </li>
-                                                <li>
-                                                    <a href="#">国务院安委会对两起重大道路交通事故查处挂牌督办</a>
-                                                    <p>[09-14]</p>
-                                                </li>
-                                                <li>
-                                                    <a href="#">最高检：公益诉讼全面开展4年提起诉讼近2万件</a>
-                                                    <p>[09-14]</p>
-                                                </li>
                                             </ul>
                                         </div>
                                     </div>
@@ -314,43 +240,6 @@
                                         </div>
                                         <div class="container news">
                                             <ul>
-                                                <li>
-                                                    <a href="#" style="font-size: 30px;color: red;max-width: 100%;">
-                                                        做“先锋”不做“看客”成“梦想派”更成“行动派”
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">国务院安委会对两起重大道路交通事故查处挂牌督办</a>
-                                                    <p>[09-14]</p>
-                                                </li>
-                                                <li>
-                                                    <a href="#">最高检：公益诉讼全面开展4年提起诉讼近2万件</a>
-                                                    <p>[09-14]</p>
-                                                </li>
-                                                <li>
-                                                    <a href="#">5年收案逾2000万件 中国发文夯实法庭之“基”</a>
-                                                    <p>[09-14]</p>
-                                                </li>
-                                                <li>
-                                                    <a href="#" style="font-size: 30px;color: red;max-width: 100%;">
-                                                        中国多个大学校长寄语
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">
-                                                        中国多个大学校长寄语：做“先锋”不做“看客”
-                                                        成“梦想派”更成“行动派”
-                                                    </a>
-                                                    <p>[09-14]</p>
-                                                </li>
-                                                <li>
-                                                    <a href="#">国务院安委会对两起重大道路交通事故查处挂牌督办</a>
-                                                    <p>[09-14]</p>
-                                                </li>
-                                                <li>
-                                                    <a href="#">最高检：公益诉讼全面开展4年提起诉讼近2万件</a>
-                                                    <p>[09-14]</p>
-                                                </li>
                                             </ul>
                                         </div>
                                     </div>
@@ -372,46 +261,6 @@
                         </div>
                         <div class="container news">
                             <ul>
-                                <li>
-                                    <a href="#">
-                                        中国多个大学校长寄语：做“先锋”不做“看客” 成“梦想派”更成“行动派”
-                                    </a>
-                                    <p>[09-14]</p>
-                                </li>
-                                <li>
-                                    <a href="#">国务院安委会对两起重大道路交通事故查处挂牌督办</a>
-                                    <p>[09-14]</p>
-                                </li>
-                                <li>
-                                    <a href="#">最高检：公益诉讼全面开展4年提起诉讼近2万件</a>
-                                    <p>[09-14]</p>
-                                </li>
-                                <li>
-                                    <a href="#">5年收案逾2000万件 中国发文夯实法庭之“基”</a>
-                                    <p>[09-14]</p>
-                                </li>
-                                <li>
-                                    <a href="#">中国代表一组国家在联合国人权理事会指出美国严重人权问题</a>
-                                    <p>[09-14]</p>
-                                </li>
-                                <li>
-                                    <a href="#">教育部：从严从紧做好中秋国庆假期和秋季学期疫情防控工作</a>
-                                    <p>[09-14]</p>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        中国多个大学校长寄语：做“先锋”不做“看客” 成“梦想派”更成“行动派”
-                                    </a>
-                                    <p>[09-14]</p>
-                                </li>
-                                <li>
-                                    <a href="#">国务院安委会对两起重大道路交通事故查处挂牌督办</a>
-                                    <p>[09-14]</p>
-                                </li>
-                                <li>
-                                    <a href="#">最高检：公益诉讼全面开展4年提起诉讼近2万件</a>
-                                    <p>[09-14]</p>
-                                </li>
                             </ul>
                         </div>
                     </div>
@@ -471,54 +320,6 @@
                             </div>
                             <div class="container news">
                                 <ul>
-                                    <li>
-                                        <a href="#" style="font-size: 30px;color: red;max-width: 100%;">
-                                            做“先锋”不做“看客”成“梦想派”更成“行动派”
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">国务院安委会对两起重大道路交通事故查处挂牌督办</a>
-                                        <p>[09-14]</p>
-                                    </li>
-                                    <li>
-                                        <a href="#">国务院安委会对两起重大道路交通事故查处挂牌督办</a>
-                                        <p>[09-14]</p>
-                                    </li>
-                                    <li>
-                                        <a href="#">最高检：公益诉讼全面开展4年提起诉讼近2万件</a>
-                                        <p>[09-14]</p>
-                                    </li>
-                                    <li>
-                                        <a href="#">5年收案逾2000万件 中国发文夯实法庭之“基”</a>
-                                        <p>[09-14]</p>
-                                    </li>
-                                    <li>
-                                        <a href="#">5年收案逾2000万件 中国发文夯实法庭之“基”</a>
-                                        <p>[09-14]</p>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            中国多个大学校长寄语：做“先锋”不做“看客”
-                                            成“梦想派”更成“行动派”
-                                        </a>
-                                        <p>[09-14]</p>
-                                    </li>
-                                    <li>
-                                        <a href="#">国务院安委会对两起重大道路交通事故查处挂牌督办</a>
-                                        <p>[09-14]</p>
-                                    </li>
-                                    <li>
-                                        <a href="#">最高检：公益诉讼全面开展4年提起诉讼近2万件</a>
-                                        <p>[09-14]</p>
-                                    </li>
-                                    <li>
-                                        <a href="#">最高检：公益诉讼全面开展4年提起诉讼近2万件</a>
-                                        <p>[09-14]</p>
-                                    </li>
-                                    <li>
-                                        <a href="#">5年收案逾2000万件 中国发文夯实法庭之“基”</a>
-                                        <p>[09-14]</p>
-                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -545,45 +346,6 @@
                 </div>
                 <div class="container news" style="margin-top: 12px;">
                     <ul>
-                        <li>
-                            <a href="#">国务院安委会对两起重大道路交通事故查处挂牌督办</a>
-                            <p>[09-14]</p>
-                        </li>
-                        <li>
-                            <a href="#">最高检：公益诉讼全面开展4年提起诉讼近2万件</a>
-                            <p>[09-14]</p>
-                        </li>
-                        <li>
-                            <a href="#">5年收案逾2000万件 中国发文夯实法庭之“基”</a>
-                            <p>[09-14]</p>
-                        </li>
-                        <li>
-                            <a href="#">5年收案逾2000万件 中国发文夯实法庭之“基”</a>
-                            <p>[09-14]</p>
-                        </li>
-                        <li>
-                            <a href="#">
-                                中国多个大学校长寄语：做“先锋”不做“看客”
-                                成“梦想派”更成“行动派”
-                            </a>
-                            <p>[09-14]</p>
-                        </li>
-                        <li>
-                            <a href="#">国务院安委会对两起重大道路交通事故查处挂牌督办</a>
-                            <p>[09-14]</p>
-                        </li>
-                        <li>
-                            <a href="#">国务院安委会对两起重大道路交通事故查处挂牌督办</a>
-                            <p>[09-14]</p>
-                        </li>
-                        <li>
-                            <a href="#">5年收案逾2000万件 中国发文夯实法庭之“基”</a>
-                            <p>[09-14]</p>
-                        </li>
-                        <li>
-                            <a href="#">5年收案逾2000万件 中国发文夯实法庭之“基”</a>
-                            <p>[09-14]</p>
-                        </li>
                     </ul>
                 </div>
             </div>
@@ -603,32 +365,6 @@
                     </div>
                     <div class="container news">
                         <ul>
-                            <li>
-                                <a href="#">
-                                    中国多个大学校长寄语：做“先锋”不做“看客” 成“梦想派”更成“行动派”
-                                </a>
-                                <p>[09-14]</p>
-                            </li>
-                            <li>
-                                <a href="#">国务院安委会对两起重大道路交通事故查处挂牌督办</a>
-                                <p>[09-14]</p>
-                            </li>
-                            <li>
-                                <a href="#">最高检：公益诉讼全面开展4年提起诉讼近2万件</a>
-                                <p>[09-14]</p>
-                            </li>
-                            <li>
-                                <a href="#">5年收案逾2000万件 中国发文夯实法庭之“基”</a>
-                                <p>[09-14]</p>
-                            </li>
-                            <li>
-                                <a href="#">中国代表一组国家在联合国人权理事会指出美国严重人权问题</a>
-                                <p>[09-14]</p>
-                            </li>
-                            <li>
-                                <a href="#">教育部：从严从紧做好中秋国庆假期和秋季学期疫情防控工作</a>
-                                <p>[09-14]</p>
-                            </li>
                         </ul>
                     </div>
                 </div>
@@ -641,32 +377,6 @@
                     </div>
                     <div class="container news">
                         <ul>
-                            <li>
-                                <a href="#">
-                                    中国多个大学校长寄语：做“先锋”不做“看客” 成“梦想派”更成“行动派”
-                                </a>
-                                <p>[09-14]</p>
-                            </li>
-                            <li>
-                                <a href="#">国务院安委会对两起重大道路交通事故查处挂牌督办</a>
-                                <p>[09-14]</p>
-                            </li>
-                            <li>
-                                <a href="#">最高检：公益诉讼全面开展4年提起诉讼近2万件</a>
-                                <p>[09-14]</p>
-                            </li>
-                            <li>
-                                <a href="#">5年收案逾2000万件 中国发文夯实法庭之“基”</a>
-                                <p>[09-14]</p>
-                            </li>
-                            <li>
-                                <a href="#">中国代表一组国家在联合国人权理事会指出美国严重人权问题</a>
-                                <p>[09-14]</p>
-                            </li>
-                            <li>
-                                <a href="#">教育部：从严从紧做好中秋国庆假期和秋季学期疫情防控工作</a>
-                                <p>[09-14]</p>
-                            </li>
                         </ul>
                     </div>
                 </div>
@@ -679,32 +389,6 @@
                     </div>
                     <div class="container news">
                         <ul>
-                            <li>
-                                <a href="#">
-                                    中国多个大学校长寄语：做“先锋”不做“看客” 成“梦想派”更成“行动派”
-                                </a>
-                                <p>[09-14]</p>
-                            </li>
-                            <li>
-                                <a href="#">国务院安委会对两起重大道路交通事故查处挂牌督办</a>
-                                <p>[09-14]</p>
-                            </li>
-                            <li>
-                                <a href="#">最高检：公益诉讼全面开展4年提起诉讼近2万件</a>
-                                <p>[09-14]</p>
-                            </li>
-                            <li>
-                                <a href="#">5年收案逾2000万件 中国发文夯实法庭之“基”</a>
-                                <p>[09-14]</p>
-                            </li>
-                            <li>
-                                <a href="#">中国代表一组国家在联合国人权理事会指出美国严重人权问题</a>
-                                <p>[09-14]</p>
-                            </li>
-                            <li>
-                                <a href="#">教育部：从严从紧做好中秋国庆假期和秋季学期疫情防控工作</a>
-                                <p>[09-14]</p>
-                            </li>
                         </ul>
                     </div>
                 </div>
@@ -719,32 +403,6 @@
                     </div>
                     <div class="container news">
                         <ul>
-                            <li>
-                                <a href="#">
-                                    中国多个大学校长寄语：做“先锋”不做“看客” 成“梦想派”更成“行动派”
-                                </a>
-                                <p>[09-14]</p>
-                            </li>
-                            <li>
-                                <a href="#">国务院安委会对两起重大道路交通事故查处挂牌督办</a>
-                                <p>[09-14]</p>
-                            </li>
-                            <li>
-                                <a href="#">最高检：公益诉讼全面开展4年提起诉讼近2万件</a>
-                                <p>[09-14]</p>
-                            </li>
-                            <li>
-                                <a href="#">5年收案逾2000万件 中国发文夯实法庭之“基”</a>
-                                <p>[09-14]</p>
-                            </li>
-                            <li>
-                                <a href="#">中国代表一组国家在联合国人权理事会指出美国严重人权问题</a>
-                                <p>[09-14]</p>
-                            </li>
-                            <li>
-                                <a href="#">教育部：从严从紧做好中秋国庆假期和秋季学期疫情防控工作</a>
-                                <p>[09-14]</p>
-                            </li>
                         </ul>
                     </div>
                 </div>
@@ -757,32 +415,6 @@
                     </div>
                     <div class="container news">
                         <ul>
-                            <li>
-                                <a href="#">
-                                    中国多个大学校长寄语：做“先锋”不做“看客” 成“梦想派”更成“行动派”
-                                </a>
-                                <p>[09-14]</p>
-                            </li>
-                            <li>
-                                <a href="#">国务院安委会对两起重大道路交通事故查处挂牌督办</a>
-                                <p>[09-14]</p>
-                            </li>
-                            <li>
-                                <a href="#">最高检：公益诉讼全面开展4年提起诉讼近2万件</a>
-                                <p>[09-14]</p>
-                            </li>
-                            <li>
-                                <a href="#">5年收案逾2000万件 中国发文夯实法庭之“基”</a>
-                                <p>[09-14]</p>
-                            </li>
-                            <li>
-                                <a href="#">中国代表一组国家在联合国人权理事会指出美国严重人权问题</a>
-                                <p>[09-14]</p>
-                            </li>
-                            <li>
-                                <a href="#">教育部：从严从紧做好中秋国庆假期和秋季学期疫情防控工作</a>
-                                <p>[09-14]</p>
-                            </li>
                         </ul>
                     </div>
                 </div>
@@ -795,32 +427,6 @@
                     </div>
                     <div class="container news">
                         <ul>
-                            <li>
-                                <a href="#">
-                                    中国多个大学校长寄语：做“先锋”不做“看客” 成“梦想派”更成“行动派”
-                                </a>
-                                <p>[09-14]</p>
-                            </li>
-                            <li>
-                                <a href="#">国务院安委会对两起重大道路交通事故查处挂牌督办</a>
-                                <p>[09-14]</p>
-                            </li>
-                            <li>
-                                <a href="#">最高检：公益诉讼全面开展4年提起诉讼近2万件</a>
-                                <p>[09-14]</p>
-                            </li>
-                            <li>
-                                <a href="#">5年收案逾2000万件 中国发文夯实法庭之“基”</a>
-                                <p>[09-14]</p>
-                            </li>
-                            <li>
-                                <a href="#">中国代表一组国家在联合国人权理事会指出美国严重人权问题</a>
-                                <p>[09-14]</p>
-                            </li>
-                            <li>
-                                <a href="#">教育部：从严从紧做好中秋国庆假期和秋季学期疫情防控工作</a>
-                                <p>[09-14]</p>
-                            </li>
                         </ul>
                     </div>
                 </div>
@@ -835,32 +441,6 @@
                     </div>
                     <div class="container news">
                         <ul>
-                            <li>
-                                <a href="#">
-                                    中国多个大学校长寄语：做“先锋”不做“看客” 成“梦想派”更成“行动派”
-                                </a>
-                                <p>[09-14]</p>
-                            </li>
-                            <li>
-                                <a href="#">国务院安委会对两起重大道路交通事故查处挂牌督办</a>
-                                <p>[09-14]</p>
-                            </li>
-                            <li>
-                                <a href="#">最高检：公益诉讼全面开展4年提起诉讼近2万件</a>
-                                <p>[09-14]</p>
-                            </li>
-                            <li>
-                                <a href="#">5年收案逾2000万件 中国发文夯实法庭之“基”</a>
-                                <p>[09-14]</p>
-                            </li>
-                            <li>
-                                <a href="#">中国代表一组国家在联合国人权理事会指出美国严重人权问题</a>
-                                <p>[09-14]</p>
-                            </li>
-                            <li>
-                                <a href="#">教育部：从严从紧做好中秋国庆假期和秋季学期疫情防控工作</a>
-                                <p>[09-14]</p>
-                            </li>
                         </ul>
                     </div>
                 </div>
@@ -873,32 +453,6 @@
                     </div>
                     <div class="container news">
                         <ul>
-                            <li>
-                                <a href="#">
-                                    中国多个大学校长寄语：做“先锋”不做“看客” 成“梦想派”更成“行动派”
-                                </a>
-                                <p>[09-14]</p>
-                            </li>
-                            <li>
-                                <a href="#">国务院安委会对两起重大道路交通事故查处挂牌督办</a>
-                                <p>[09-14]</p>
-                            </li>
-                            <li>
-                                <a href="#">最高检：公益诉讼全面开展4年提起诉讼近2万件</a>
-                                <p>[09-14]</p>
-                            </li>
-                            <li>
-                                <a href="#">5年收案逾2000万件 中国发文夯实法庭之“基”</a>
-                                <p>[09-14]</p>
-                            </li>
-                            <li>
-                                <a href="#">中国代表一组国家在联合国人权理事会指出美国严重人权问题</a>
-                                <p>[09-14]</p>
-                            </li>
-                            <li>
-                                <a href="#">教育部：从严从紧做好中秋国庆假期和秋季学期疫情防控工作</a>
-                                <p>[09-14]</p>
-                            </li>
                         </ul>
                     </div>
                 </div>
@@ -912,26 +466,29 @@
 <script type="text/javascript">
     $(document).ready(function () {
         Home_Load();
-        var article;
+        var articles;
+
+        //$.ajax({
+        //    type: 'POST',
+        //    url: 'Get_news_by_num',
+        //    data: { "num": 6 },
+        //    success: function (data) {
+        //        article = data;
+        //        Create_news($("#news_1>div.news > ul"), JSON.parse(data));
+        //    },
+        //    error: function (error) {
+        //        console.log(error);
+        //        alert("提交失败");
+        //    }
+        //})
         $.ajax({
             type: 'POST',
             url: 'Get_news_by_num',
             data: { "num": 6 },
             success: function (data) {
-                article = data;
-                Create_news($("#news_1>div.news > ul"), JSON.parse(data));
-            },
-            error: function (error) {
-                console.log(error);
-                alert("提交失败");
-            }
-        })
-        $.ajax({
-            type: 'POST',
-            url: 'Get_news_by_num',
-            data: { "num": 6 },
-            success: function (data) {
-                Create_news($("#news_2>div.news > ul"), JSON.parse(data));
+                articles = data;
+                    Create_news($("div.container.news>ul"), JSON.parse(data));
+
             },
             error: function (error) {
                 console.log(error);

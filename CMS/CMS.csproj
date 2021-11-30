@@ -155,6 +155,11 @@
     </Compile>
     <Compile Include="Models\ArticleModel.cs" />
     <Compile Include="Models\Articles.cs" />
+    <Compile Include="Models\UserModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UserModel.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ueditor\net\App_Code\Config.cs" />
     <Compile Include="ueditor\net\App_Code\ConfigHandler.cs" />
@@ -344,7 +349,15 @@
     <Content Include="ueditor\lang\zh-cn\zh-cn.js" />
     <Content Include="ueditor\net\net.sln" />
     <Content Include="ueditor\net\upload\image\20211111\Background9426588.png" />
+    <Content Include="ueditor\net\upload\image\20211123\0406-19e328cd0510b14276ef261823121e4e4973838.jpg" />
+    <Content Include="ueditor\net\upload\image\20211123\rsz_wallhaven-7211083753215.png" />
+    <Content Include="ueditor\net\upload\image\20211123\slide13585578.jpg" />
     <Content Include="ueditor\net\upload\image\20211123\slide14572732.jpg" />
+    <Content Include="ueditor\net\upload\image\20211123\slide19293663.jpg" />
+    <Content Include="ueditor\net\upload\image\20211125\Background1036522.png" />
+    <Content Include="ueditor\net\upload\image\20211130\75e1-fe038e8aca15555aca76d78e74411ad27288355.jpg" />
+    <Content Include="ueditor\net\upload\image\20211130\a1db-1592385c2d29f8c3ca646dd5b8e895144564674.jpg" />
+    <Content Include="ueditor\net\upload\image\20211130\StarWars - Darth Vader_wallpaper_2560x16004063830.png" />
     <Content Include="ueditor\themes\default\css\ueditor.css" />
     <Content Include="ueditor\themes\default\css\ueditor.min.css" />
     <Content Include="ueditor\themes\default\dialogbase.css" />
@@ -613,6 +626,13 @@
     <Content Include="zui\lib\uploader\zui.uploader.js" />
     <Content Include="zui\lib\uploader\zui.uploader.min.css" />
     <Content Include="zui\lib\uploader\zui.uploader.min.js" />
+    <EntityDeploy Include="Models\UserModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>UserModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\UserModel.edmx.diagram">
+      <DependentUpon>UserModel.edmx</DependentUpon>
+    </Content>
     <None Include="Properties\PublishProfiles\IISProfile.pubxml" />
     <Content Include="image\148bf7ddd88766bafe822cbc79e132ec.jpeg" />
     <Content Include="image\400a6e57f796.jpeg" />
@@ -784,6 +804,19 @@
     <Content Include="Views\Home\Home.cshtml" />
     <Content Include="zui\lib\kindeditor\plugins.zip" />
     <Content Include="zui\lib\kindeditor\README.md" />
+    <Content Include="ueditor\net\upload\image\20211123\5951a45ajw8etgykllkwpj20yi0yijta7829850.jpgKID=imgbed,tva&amp;Expires=1637671090&amp;ssig=5bqfnv98FZ" />
+    <Content Include="ueditor\net\upload\image\20211123\url=http%253A%252F%252Fcms-bucket.ws.126.net%252F2021%252F1123%252F55f2ce55j00r307gt004pc000u001ahc6840945.jpg&amp;thumbnail=660x2147483647&amp;quality=80&amp;type=jpg" />
+    <Content Include="ueditor\net\upload\image\20211123\url=http%253A%252F%252Fcms-bucket.ws.126.net%252F2021%252F1123%252F55f2ce55j00r307gt004pc000u001ahc7714728.jpg&amp;thumbnail=660x2147483647&amp;quality=80&amp;type=jpg" />
+    <Content Include="ueditor\net\upload\image\20211123\url=http%253A%252F%252Fcms-bucket.ws.126.net%252F2021%252F1123%252F55f2ce55j00r307gt004pc000u001ahc9036102.jpg&amp;thumbnail=660x2147483647&amp;quality=80&amp;type=jpg" />
+    <Content Include="ueditor\net\upload\image\20211123\url=http%253A%252F%252Fcms-bucket.ws.126.net%252F2021%252F1123%252Fe77b7e30j00r307gt02h0c002om02jrc2826852.jpg&amp;thumbnail=660x2147483647&amp;quality=80&amp;type=jpg" />
+    <Content Include="ueditor\net\upload\image\20211123\url=http%253A%252F%252Fcms-bucket.ws.126.net%252F2021%252F1123%252Fe77b7e30j00r307gt02h0c002om02jrc5022010.jpg&amp;thumbnail=660x2147483647&amp;quality=80&amp;type=jpg" />
+    <Content Include="ueditor\net\upload\image\20211123\url=http%253A%252F%252Fcms-bucket.ws.126.net%252F2021%252F1123%252Fe77b7e30j00r307gt02h0c002om02jrc9471390.jpg&amp;thumbnail=660x2147483647&amp;quality=80&amp;type=jpg" />
+    <Content Include="ueditor\net\upload\image\20211130\3ac79f3df8dcd10003c645e67031c719bb122fe68335775.jpegtoken=c2ec837b856ce1020a2bbcb012881e6e" />
+    <Content Include="ueditor\net\upload\image\20211130\3ac79f3df8dcd10003c645e67031c719bb122fe68390152.jpegtoken=c2ec837b856ce1020a2bbcb012881e6e" />
+    <Content Include="ueditor\net\upload\image\20211130\8cb1cb134954092315860b7c6ee15100b2de490c1146815.jpegtoken=a5340c15fb2f9717b708ae934898c761" />
+    <Content Include="ueditor\net\upload\image\20211130\8cb1cb134954092315860b7c6ee15100b2de490c7050161.jpegtoken=a5340c15fb2f9717b708ae934898c761" />
+    <Content Include="ueditor\net\upload\image\20211130\ac4bd11373f08202c7ee6bf848417be4aa641b384635481.jpegtoken=7cbb16700ce6943ed74e452d0684d99c" />
+    <Content Include="ueditor\net\upload\image\20211130\ac4bd11373f08202c7ee6bf848417be4aa641b386633489.jpegtoken=7cbb16700ce6943ed74e452d0684d99c" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
