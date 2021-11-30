@@ -1,2 +1,2 @@
-﻿delete from Departments;
-delete from Articles;
+﻿drop table Articles;
+drop table Departments;

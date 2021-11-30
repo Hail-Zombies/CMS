@@ -22,11 +22,23 @@ namespace CMS.Controllers
             return View();
         }
 
-        [Route("Get_carousel_news")]
-        public ActionResult Get_carousel_news()
+        [Route("Get_news_by_num")]
+        [Route("Home/Get_news_by_num")]
+        public ActionResult Get_news_by_num()
         {
             var num = Convert.ToInt32(Request.Params.Get("num"));
-            string sql = @"Select top " + num + @" [Id],[Title],[Update_time],[Class],[Img],[Abstract] From Articles order by [Update_time],[Id] ASC";
+            string sql = @"Select top " + num + @" [Id],[Title],[Update_time],[Class],[Img],[Abstract] From Articles order by [Update_time] DESC,[ID] ASC";
+
+            ArticleModel navigation = new ArticleModel();
+            var res = navigation.Database.SqlQuery<Navigation>(sql);
+            return Json(JsonConvert.SerializeObject(res));
+        }
+
+        [Route("Get_all")]
+        [Route("Home/Get_all")]
+        public ActionResult Get_all()
+        {
+            string sql = @"Select [Id],[Title],[Update_time],[Class],[Img],[Abstract] From Articles order by [Update_time] DESC,[ID] ASC";
 
             ArticleModel navigation = new ArticleModel();
             var res = navigation.Database.SqlQuery<Navigation>(sql);
